@@ -11,25 +11,28 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="container-x py-12">
+    <div className="container-wide py-16 md:py-24">
       <div className="mx-auto max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">FAQ</p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
+        <span className="label-mono text-gold-500">FAQ</span>
+        <h1 className="mt-4 font-serif text-4xl font-bold text-charcoal-800 md:text-5xl">
           Ko‘p so‘raladigan savollar
         </h1>
 
-        <div className="mt-10 space-y-3">
+        <div className="mt-12 space-y-3">
           {faqs.map((f) => (
-            <details key={f.q} className="group rounded-2xl border border-charcoal-200/60 bg-white p-5 open:border-forest-600/50">
-              <summary className="cursor-pointer list-none text-base font-semibold text-charcoal-800 marker:hidden">
-                <span className="flex items-center justify-between gap-4">
-                  {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-charcoal-200 text-charcoal-500 transition-transform group-open:rotate-45">
-                    +
-                  </span>
+            <details
+              key={f.q}
+              className="group rounded-2xl border border-sage-200 bg-white p-5 transition-all open:border-forest-600/50"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-base font-semibold text-charcoal-800 marker:hidden">
+                {f.q}
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-sage-200 text-charcoal-500 transition-transform group-open:rotate-45">
+                  +
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal-600">{f.a}</p>
+              <p className="mt-4 text-sm leading-relaxed text-charcoal-500">
+                {f.a}
+              </p>
             </details>
           ))}
         </div>

@@ -11,8 +11,11 @@ import {
   Center,
 } from "@react-three/drei";
 
+/* Draco decoder yo'li (lokal) */
+const DRACO_PATH = "/draco/";
+
 function Model({ url }: { url: string }) {
-  const { scene } = useGLTF(url);
+  const { scene } = useGLTF(url, DRACO_PATH);
   return <primitive object={scene} dispose={null} />;
 }
 
@@ -76,3 +79,6 @@ export function Hero3D({ modelUrl }: { modelUrl: string }) {
     </div>
   );
 }
+
+/* Preload model */
+useGLTF.preload("/models/zig-zag-javon.glb", DRACO_PATH);

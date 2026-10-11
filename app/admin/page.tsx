@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
@@ -49,8 +49,8 @@ const STATUS_CONFIG: Record<
   confirmed: { label: "Tasdiqlangan", color: "#3b82f6", icon: CheckCircle2, text: "text-blue-600 bg-blue-50" },
   processing: { label: "Tayyorlanmoqda", color: "#6366f1", icon: Package, text: "text-indigo-600 bg-indigo-50" },
   shipped: { label: "Yuborilgan", color: "#8b5cf6", icon: Truck, text: "text-violet-600 bg-violet-50" },
-  delivered: { label: "Yetkazilgan", color: "#10b981", icon: CheckCircle2, text: "text-emerald-600 bg-emerald-50" },
-  cancelled: { label: "Bekor", color: "#ef4444", icon: XCircle, text: "text-red-600 bg-red-50" },
+  delivered: { label: "Yetkazilgan", color: "#10b981", icon: CheckCircle2, text: "text-forest-600 bg-forest-600/10" },
+  cancelled: { label: "Bekor", color: "#ef4444", icon: XCircle, text: "text-red-500 bg-red-50" },
 };
 
 export default function AdminDashboardPage() {
@@ -471,8 +471,8 @@ function KpiCard({
   const colorMap = {
     petrol: "bg-forest-600/10 text-forest-600",
     gold: "bg-gold-400/15 text-gold-600",
-    emerald: "bg-emerald-50 text-emerald-600",
-    red: "bg-red-50 text-red-600",
+    emerald: "bg-forest-600/10 text-forest-600",
+    red: "bg-red-50 text-red-500",
   };
 
   return (
@@ -486,8 +486,8 @@ function KpiCard({
             className={cn(
               "inline-flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold",
               change >= 0
-                ? "bg-emerald-50 text-emerald-600"
-                : "bg-red-50 text-red-600"
+                ? "bg-forest-600/10 text-forest-600"
+                : "bg-red-50 text-red-500"
             )}
           >
             {change >= 0 ? (

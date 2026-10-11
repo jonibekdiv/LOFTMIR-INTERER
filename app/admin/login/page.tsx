@@ -36,63 +36,60 @@ export default function AdminLoginPage() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-charcoal-900 flex items-center justify-center px-4">
-      <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage:
-          "radial-gradient(circle at 30% 30%, rgba(229,167,58,0.3) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(37,108,99,0.4) 0%, transparent 50%)",
-      }} />
+    <div className="flex min-h-screen items-center justify-center bg-forest-800 px-4">
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 30% 30%, rgba(232,175,66,0.3) 0%, transparent 50%), radial-gradient(circle at 70% 70%, rgba(63,143,126,0.4) 0%, transparent 50%)",
+        }}
+      />
 
       <div className="relative w-full max-w-md">
         <div className="mb-8 flex justify-center">
           <Logo variant="light" />
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+        <div className="rounded-3xl border border-ivory-200/10 bg-white/5 p-8 backdrop-blur-md">
           <div className="text-center">
             <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gold-400/10">
               <Lock className="h-6 w-6 text-gold-400" />
             </div>
-            <h1 className="mt-4 heading-display text-2xl text-white">
+            <h1 className="mt-4 font-serif text-2xl font-bold text-ivory-200">
               Admin Panel
             </h1>
-            <p className="mt-2 text-xs text-charcoal-400">
+            <p className="mt-2 text-xs text-ivory-200/60">
               Faqat ruxsat berilgan foydalanuvchilar uchun
             </p>
           </div>
 
           <form onSubmit={submit} className="mt-8 space-y-4">
             <div>
-              <label className="text-xs font-medium text-charcoal-300">
-                Login
-              </label>
+              <label className="text-xs font-medium text-ivory-200/70">Login</label>
               <div className="relative mt-2">
-                <User className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-500" />
+                <User className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ivory-200/40" />
                 <input
                   type="text"
                   value={form.login}
                   onChange={(e) => setForm({ ...form, login: e.target.value })}
                   placeholder="admin"
                   required
-                  autoComplete="username"
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white placeholder:text-charcoal-500 focus:border-gold-400 focus:outline-none"
+                  className="h-12 w-full rounded-xl border border-ivory-200/10 bg-white/5 pl-11 pr-4 text-sm text-ivory-200 placeholder:text-ivory-200/30 focus:border-gold-400 focus:outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-medium text-charcoal-300">
-                Parol
-              </label>
+              <label className="text-xs font-medium text-ivory-200/70">Parol</label>
               <div className="relative mt-2">
-                <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-500" />
+                <Lock className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ivory-200/40" />
                 <input
                   type="password"
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   placeholder="••••••••"
                   required
-                  autoComplete="current-password"
-                  className="h-12 w-full rounded-xl border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white placeholder:text-charcoal-500 focus:border-gold-400 focus:outline-none"
+                  className="h-12 w-full rounded-xl border border-ivory-200/10 bg-white/5 pl-11 pr-4 text-sm text-ivory-200 placeholder:text-ivory-200/30 focus:border-gold-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -107,11 +104,11 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gold-400 text-sm table-num font-semibold text-charcoal-900 transition-all hover:brightness-110 disabled:opacity-50"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gold-400 text-sm font-semibold text-charcoal-800 transition-all hover:bg-gold-300 disabled:opacity-50"
             >
               {loading ? (
                 <>
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-charcoal-900/30 border-t-charcoal-900" />
+                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-charcoal-800/30 border-t-charcoal-800" />
                   Tekshirilmoqda...
                 </>
               ) : (
@@ -123,15 +120,13 @@ export default function AdminLoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-3 text-center">
-            <p className="text-[10px] text-charcoal-500">Demo login:</p>
-            <p className="mt-1 font-mono text-xs text-gold-400">
-              admin / loftmir2024
-            </p>
+          <div className="mt-6 rounded-xl border border-ivory-200/10 bg-white/5 p-3 text-center">
+            <p className="text-[10px] text-ivory-200/40">Demo login:</p>
+            <p className="price-text mt-1 text-xs text-gold-400">admin / loftmir2024</p>
           </div>
         </div>
 
-        <p className="mt-6 text-center text-[10px] text-charcoal-500">
+        <p className="mt-6 text-center text-[10px] text-ivory-200/40">
           © 2024 LOFTMIR INTERER · Admin Panel v1.0
         </p>
       </div>

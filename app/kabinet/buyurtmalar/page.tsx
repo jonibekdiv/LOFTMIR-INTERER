@@ -32,7 +32,7 @@ const STATUS_MAP: Record<
 export default function OrdersPage() {
   const [orders, setOrders] = useState<CompletedOrder[]>([]);
   const [loaded, setLoaded] = useState(false);
- const addItemLite = useCartStore((s) => s.addItemLite);
+  const addItemLite = useCartStore((s) => s.addItemLite);
 
   useEffect(() => {
     setOrders(loadOrders());
@@ -42,26 +42,26 @@ export default function OrdersPage() {
   if (!loaded) {
     return (
       <div className="flex justify-center py-20">
-        <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-sage-200 border-t-forest-600" />
       </div>
     );
   }
 
   if (orders.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-charcoal-200 bg-charcoal-50 py-20 text-center">
-        <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-white shadow-soft">
-          <ShoppingBag className="h-8 w-8 text-charcoal-400" />
+      <div className="rounded-2xl border border-dashed border-sage-200 bg-ivory-100 py-20 text-center">
+        <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-white shadow-[0_4px_24px_-8px_rgba(18,79,69,0.1)]">
+          <ShoppingBag className="h-8 w-8 text-charcoal-300" />
         </div>
-        <h2 className="mt-5 font-display text-xl font-bold text-charcoal-800">
+        <h2 className="mt-5 font-serif text-xl font-bold text-charcoal-800">
           Buyurtmalar yo‘q
         </h2>
-        <p className="mt-2 text-sm text-charcoal-500">
+        <p className="mt-2 text-sm text-charcoal-400">
           Hali buyurtma bermagansiz
         </p>
         <Link
           href="/mahsulotlar"
-          className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
+          className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-ivory-200 transition-colors hover:bg-forest-700"
         >
           Xaridni boshlash
           <ArrowRight className="h-4 w-4" />
@@ -73,10 +73,10 @@ export default function OrdersPage() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="price-display text-xl text-charcoal-900">
+        <h2 className="font-serif text-xl font-bold text-charcoal-800">
           Buyurtmalarim
         </h2>
-        <span className="text-xs text-charcoal-500">
+        <span className="price-text text-xs text-charcoal-400">
           {orders.length} ta buyurtma
         </span>
       </div>
@@ -84,45 +84,44 @@ export default function OrdersPage() {
       {orders.map((order) => {
         const status = STATUS_MAP[order.status];
         const Icon = status.icon;
-        const totalItems = order.items.reduce((sum, i) => sum + i.quantity, 0);
+        const totalItems = order.items.reduce((s, i) => s + i.quantity, 0);
         const date = new Date(order.createdAt);
-        const dateStr = date.toLocaleDateString("uz-UZ", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        });
-        const timeStr = date.toLocaleTimeString("uz-UZ", {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
 
         return (
           <div
             key={order.id}
-            className="overflow-hidden rounded-2xl border border-charcoal-200/60 bg-white transition-all hover:border-forest-600/50 hover:shadow-soft"
+            className="overflow-hidden rounded-2xl border border-sage-200 bg-white transition-all hover:border-forest-600/40 hover:shadow-[0_4px_24px_-8px_rgba(18,79,69,0.08)]"
           >
-            {/* Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-charcoal-100 bg-charcoal-50/50 px-5 py-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-sage-200 bg-ivory-100/50 px-5 py-4">
               <div className="flex items-center gap-4">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-forest-600/10 text-forest-600">
                   <Package className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-display text-base font-bold text-charcoal-900">
+                  <p className="price-text font-serif text-base font-bold text-charcoal-800">
                     {order.number}
                   </p>
-                  <p className="mt-0.5 text-[11px] text-charcoal-500">
-                    {dateStr} · {timeStr}
+                  <p className="mt-0.5 text-[11px] text-charcoal-400">
+                    {date.toLocaleDateString("uz-UZ", {
+                      day: "2-digit",
+                      month: "long",
+                      year: "numeric",
+                    })}{" "}
+                    ·{" "}
+                    {date.toLocaleTimeString("uz-UZ", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
                   </p>
                 </div>
               </div>
               <span
                 className={cn(
                   "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium",
-                  status.color === "amber" && "bg-amber-50 text-amber-700",
-                  status.color === "blue" && "bg-blue-50 text-blue-700",
-                  status.color === "indigo" && "bg-indigo-50 text-indigo-700",
-                  status.color === "emerald" && "bg-emerald-50 text-emerald-700"
+                  status.color === "amber" && "bg-gold-400/15 text-gold-600",
+                  status.color === "blue" && "bg-forest-600/10 text-forest-700",
+                  status.color === "indigo" && "bg-forest-600/10 text-forest-700",
+                  status.color === "emerald" && "bg-forest-600/15 text-forest-700"
                 )}
               >
                 <Icon className="h-3.5 w-3.5" />
@@ -130,26 +129,25 @@ export default function OrdersPage() {
               </span>
             </div>
 
-            {/* Items preview */}
             <div className="p-5">
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-3">
                   {order.items.slice(0, 3).map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-charcoal-100"
+                      className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-ivory-300"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                     </div>
                   ))}
                   {order.items.length > 3 && (
-                    <div className="grid h-14 w-14 place-items-center rounded-xl border-2 border-white bg-charcoal-100 text-xs font-bold text-charcoal-600">
+                    <div className="grid h-14 w-14 place-items-center rounded-xl border-2 border-white bg-ivory-200 text-xs font-bold text-charcoal-500">
                       +{order.items.length - 3}
                     </div>
                   )}
                 </div>
-                <div className="flex-1 min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="line-clamp-1 text-sm font-medium text-charcoal-800">
                     {order.items[0].name}
                     {order.items.length > 1 && (
@@ -158,22 +156,21 @@ export default function OrdersPage() {
                       </span>
                     )}
                   </p>
-                  <p className="mt-0.5 text-xs text-charcoal-500">
+                  <p className="mt-0.5 text-xs text-charcoal-400">
                     Jami {totalItems} ta mahsulot
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-display price-text text-lg font-bold text-charcoal-900">
+                  <p className="price-display text-lg text-charcoal-800">
                     {formatUZS(order.total)}
                   </p>
                 </div>
               </div>
 
-              {/* Actions */}
-              <div className="mt-5 flex flex-wrap gap-2 border-t border-charcoal-100 pt-4">
+              <div className="mt-5 flex flex-wrap gap-2 border-t border-sage-200 pt-4">
                 <Link
                   href={`/buyurtma/holat?number=${order.number}`}
-                  className="inline-flex h-10 items-center gap-2 rounded-xl bg-forest-600 px-4 text-xs font-semibold text-white hover:bg-forest-700"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl bg-forest-600 px-4 text-xs font-semibold text-ivory-200 transition-colors hover:bg-forest-700"
                 >
                   Holatni ko‘rish
                   <ChevronRight className="h-3.5 w-3.5" />
@@ -181,22 +178,20 @@ export default function OrdersPage() {
                 <button
                   onClick={() => {
                     order.items.forEach((i) => {
-                      /* Mahsulotni qayta savatga qo'shish - sodda versiya */
                       addItemLite(
                         {
-                          id: i.productId,
+                          productId: i.productId,
                           slug: i.slug,
-                          name: { uz: i.name, ru: i.name, en: i.name },
-                          images: [i.image],
+                          name: i.name,
+                          image: i.image,
                           price: i.price,
-                          stockCount: 99,
-                        } as never,
+                        },
                         i.color,
                         i.quantity
                       );
                     });
                   }}
-                  className="inline-flex h-10 items-center gap-2 rounded-xl border border-charcoal-200 px-4 text-xs font-medium text-charcoal-700 hover:border-forest-600 hover:text-forest-600"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl border border-sage-200 px-4 text-xs font-medium text-charcoal-600 transition-colors hover:border-forest-600 hover:text-forest-600"
                 >
                   <RotateCw className="h-3.5 w-3.5" />
                   Qayta buyurtma
@@ -209,4 +204,3 @@ export default function OrdersPage() {
     </div>
   );
 }
-

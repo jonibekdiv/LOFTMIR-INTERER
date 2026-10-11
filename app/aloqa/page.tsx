@@ -13,10 +13,10 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="container-x py-12">
+    <div className="container-wide py-16 md:py-24">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">Aloqa</p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
+        <span className="label-mono text-gold-500">Aloqa</span>
+        <h1 className="mt-4 font-serif text-4xl font-bold text-charcoal-800 md:text-5xl">
           Biz bilan bog‘laning
         </h1>
         <p className="mt-4 text-sm text-charcoal-500">
@@ -24,22 +24,22 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((it) => {
           const Wrapper = it.href ? "a" : "div";
           return (
             <Wrapper
               key={it.label}
               {...(it.href ? { href: it.href } : {})}
-              className="group rounded-2xl border border-charcoal-200/60 bg-white p-5 transition-all hover:border-forest-600/60 hover:shadow-soft"
+              className="group rounded-2xl border border-sage-200 bg-white p-5 transition-all hover:border-forest-600/60 hover:shadow-[0_8px_24px_-8px_rgba(18,79,69,0.1)]"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-forest-600/5 text-forest-600">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-forest-600/8 text-forest-600">
                 <it.icon className="h-5 w-5" />
               </div>
-              <p className="mt-4 text-xs uppercase tracking-wider text-charcoal-500">
+              <p className="label-mono mt-4 text-charcoal-400">
                 {it.label}
               </p>
-              <p className="mt-1 text-sm font-semibold text-charcoal-800 group-hover:text-forest-600">
+              <p className="mt-1 text-sm font-semibold text-charcoal-800 transition-colors group-hover:text-forest-600">
                 {it.value}
               </p>
             </Wrapper>

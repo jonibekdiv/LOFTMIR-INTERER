@@ -42,14 +42,13 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article
-  onMouseEnter={() => setHovered(true)}
-  onMouseLeave={() => setHovered(false)}
-  className="group relative flex flex-col transition-transform duration-500 hover:-translate-y-1"
->
-      {/* Image container */}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group relative flex flex-col"
+    >
       <Link
         href={`/mahsulot/${product.slug}`}
-        className="relative block aspect-[4/5] overflow-hidden rounded-2xl bg-ivory-200"
+        className="relative block aspect-[4/5] overflow-hidden rounded-2xl bg-ivory-300"
       >
         {!imgError ? (
           <Image
@@ -58,7 +57,7 @@ export function ProductCard({ product }: { product: Product }) {
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className={cn(
-              "object-cover transition-transform duration-[1200ms] ease-expo",
+              "object-cover transition-transform duration-[1200ms]",
               hovered ? "scale-[1.06]" : "scale-100"
             )}
             onError={() => setImgError(true)}
@@ -74,7 +73,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Badges */}
         <div className="absolute left-4 top-4 flex flex-col gap-2">
           {product.isNew && (
-            <span className="label-mono inline-flex items-center rounded-full bg-forest-600 px-2.5 py-1 text-[10px] text-ivory-100">
+            <span className="label-mono inline-flex items-center rounded-full bg-forest-600 px-2.5 py-1 text-[10px] text-ivory-200">
               Yangi
             </span>
           )}
@@ -84,13 +83,13 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           )}
           {hasDiscount && (
-            <span className="label-mono inline-flex items-center rounded-full bg-charcoal-700 px-2.5 py-1 text-[10px] text-ivory-100">
+            <span className="label-mono inline-flex items-center rounded-full bg-charcoal-700 px-2.5 py-1 text-[10px] text-ivory-200">
               −{discountPercent}%
             </span>
           )}
         </div>
 
-        {/* Favorite button — always visible, subtle */}
+        {/* Favorite */}
         <button
           type="button"
           aria-label={isFav ? "Sevimlilardan o‘chirish" : "Sevimlilarga qo‘shish"}
@@ -99,24 +98,19 @@ export function ProductCard({ product }: { product: Product }) {
             "absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full backdrop-blur-md transition-all duration-300",
             isFav
               ? "bg-gold-400 text-charcoal-800"
-              : "bg-ivory-100/70 text-charcoal-500 hover:bg-ivory-100 hover:text-charcoal-800"
+              : "bg-ivory-200/80 text-charcoal-500 hover:bg-ivory-200 hover:text-charcoal-800"
           )}
         >
           <Heart
-            className={cn(
-              "h-[15px] w-[15px] transition-all",
-              isFav && "fill-current"
-            )}
+            className={cn("h-[15px] w-[15px] transition-all", isFav && "fill-current")}
           />
         </button>
 
-        {/* Bottom overlay — appears on hover */}
+        {/* Hover overlay */}
         <div
           className={cn(
             "pointer-events-none absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-charcoal-800/85 px-4 py-3 backdrop-blur-md transition-all duration-500",
-            hovered
-              ? "translate-y-0 opacity-100"
-              : "translate-y-4 opacity-0"
+            hovered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           )}
         >
           <span className="label-mono text-[10px] text-ivory-200/80">
@@ -128,12 +122,10 @@ export function ProductCard({ product }: { product: Product }) {
 
       {/* Info */}
       <div className="mt-4 flex flex-1 flex-col">
-        {/* Category label */}
         <span className="label-mono text-[10px] text-charcoal-400">
           {product.categorySlug}
         </span>
 
-        {/* Title */}
         <Link
           href={`/mahsulot/${product.slug}`}
           className="mt-2 line-clamp-1 font-serif text-lg font-semibold tracking-tight text-charcoal-800 transition-colors hover:text-forest-600"
@@ -141,12 +133,10 @@ export function ProductCard({ product }: { product: Product }) {
           {product.name.uz}
         </Link>
 
-        {/* Short desc */}
         <p className="mt-1 line-clamp-1 text-xs text-charcoal-400">
           {product.shortDescription.uz}
         </p>
 
-        {/* Colors */}
         {product.colors.length > 0 && (
           <div className="mt-3 flex items-center gap-1.5">
             {product.colors.slice(0, 4).map((c) => (
@@ -160,7 +150,6 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
-        {/* Price + Add to cart */}
         <div className="mt-auto flex items-end justify-between gap-3 pt-4">
           <div className="flex flex-col">
             {hasDiscount && (
@@ -177,9 +166,9 @@ export function ProductCard({ product }: { product: Product }) {
             type="button"
             aria-label="Savatga qo‘shish"
             onClick={() => addItem(product)}
-            className="group/btn relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-xl bg-forest-600 text-ivory-100 transition-all hover:bg-forest-700 active:scale-95"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-forest-600 text-ivory-200 transition-all hover:scale-105 hover:bg-forest-700 active:scale-95"
           >
-            <ShoppingBag className="h-[15px] w-[15px] transition-transform group-hover/btn:scale-110" />
+            <ShoppingBag className="h-[15px] w-[15px]" />
           </button>
         </div>
       </div>

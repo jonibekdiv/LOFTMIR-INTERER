@@ -1,0 +1,148 @@
+﻿@import "tailwindcss";
+
+@theme {
+  --color-petrol-50:  #eef6f5;
+  --color-petrol-100: #d3e7e4;
+  --color-petrol-200: #a7cfc9;
+  --color-petrol-300: #6fb0a8;
+  --color-petrol-400: #3f8f86;
+  --color-petrol-500: #256c63;
+  --color-petrol-600: #1e4a47;
+  --color-petrol-700: #163a38;
+  --color-petrol-800: #0f2a28;
+  --color-petrol-900: #081a19;
+
+  --color-gold-50:  #fdf6e7;
+  --color-gold-100: #f9e6bd;
+  --color-gold-200: #f2ce7f;
+  --color-gold-300: #ebb54a;
+  --color-gold-400: #e5a73a;
+  --color-gold-500: #c98b22;
+  --color-gold-600: #a16d16;
+  --color-gold-700: #7a520f;
+
+  --color-graphite-50:  #f5f5f5;
+  --color-graphite-100: #e6e6e6;
+  --color-graphite-200: #c9c9c9;
+  --color-graphite-300: #a3a3a3;
+  --color-graphite-400: #737373;
+  --color-graphite-500: #4a4a4a;
+  --color-graphite-600: #2a2a2a;
+  --color-graphite-700: #1a1a1a;
+  --color-graphite-800: #0f0f0f;
+  --color-graphite-900: #050505;
+
+  --color-cream: #fafaf7;
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+
+  --shadow-soft: 0 4px 24px -8px rgb(0 0 0 / 0.08);
+  --shadow-glow: 0 8px 40px -12px rgb(229 167 58 / 0.35);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-10px); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body {
+    background: var(--color-cream);
+    color: var(--color-graphite-800);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--color-gold-400); color: var(--color-graphite-900); }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-petrol-600) 60%, transparent);
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .container-x { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
+  @media (min-width: 1280px) { .container-x { padding-inline: 3rem; } }
+
+  .glass {
+    background: color-mix(in oklab, white 70%, transparent);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  }
+  .gradient-gold { background: linear-gradient(135deg, #e5a73a 0%, #f2ce7f 50%, #c98b22 100%); }
+  .gradient-petrol { background: linear-gradient(135deg, #1e4a47 0%, #256c63 60%, #0f2a28 100%); }
+
+  .hover-lift { transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 48px -20px rgb(30 74 71 / 0.4); }
+
+  .animate-fadeUp { animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .animate-floatY { animation: floatY 4s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Narxlar uchun chiroyli shrift - tabular raqamlar */
+.price-display {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.price-text {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.005em;
+}
+
+/* Admin dashboard uchun maxsus shrift tizimi */
+
+/* Katta KPI raqamlari - tabular, tekis, chiroyli */
+.kpi-value {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv11" 1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Jadval raqamlari va summasi */
+.table-num {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* Sarlavhalar (dashboard) - haqiqiy Playfair */
+.heading-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Kichik label va meta-matn */
+.label-mono {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}

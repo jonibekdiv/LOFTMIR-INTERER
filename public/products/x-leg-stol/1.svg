@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="50%" stop-color="#2a2a2a"/><stop offset="100%" stop-color="#0f0f0f"/></linearGradient>
+    <radialGradient id="r" cx="30%" cy="40%"><stop offset="0%" stop-color="#a0714a" stop-opacity="0.5"/><stop offset="100%" stop-color="#a0714a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/><rect width="800" height="1000" fill="url(#r)"/>
+  <g opacity="0.25" stroke="#e5a73a" stroke-width="5" fill="none">
+    <line x1="200" y1="350" x2="600" y2="700"/><line x1="200" y1="700" x2="600" y2="350"/>
+    <line x1="200" y1="350" x2="200" y2="700"/><line x1="600" y1="350" x2="600" y2="700"/>
+  </g>
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia,serif" font-size="200" font-weight="bold" fill="#e5a73a">X</text>
+  <text x="400" y="920" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" letter-spacing="6" fill="#fff" opacity="0.7">X-LEG STOL</text>
+</svg>

@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e4a47"/><stop offset="60%" stop-color="#256c63"/><stop offset="100%" stop-color="#0f2a28"/>
+    </linearGradient>
+    <radialGradient id="r" cx="70%" cy="30%"><stop offset="0%" stop-color="#e5a73a" stop-opacity="0.4"/><stop offset="100%" stop-color="#e5a73a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/><rect width="800" height="1000" fill="url(#r)"/>
+  <g opacity="0.2" stroke="#e5a73a" stroke-width="3" fill="none">
+    <polyline points="200,300 400,400 600,300 600,500 400,600 200,500 200,300"/>
+    <polyline points="200,600 400,700 600,600 600,800 400,900 200,800 200,600"/>
+  </g>
+  <text x="400" y="560" text-anchor="middle" font-family="Georgia,serif" font-size="200" font-weight="bold" fill="#e5a73a">Z</text>
+  <text x="400" y="920" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" letter-spacing="6" fill="#fff" opacity="0.7">ZIG-ZAG JAVON</text>
+</svg>

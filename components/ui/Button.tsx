@@ -7,11 +7,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-petrol-600 text-white hover:bg-petrol-700 shadow-[0_4px_20px_-6px_rgb(30_74_71_/0.5)]",
-        gold: "gradient-gold text-graphite-900 hover:brightness-110 shadow-[0_4px_20px_-6px_rgb(229_167_58_/0.6)]",
-        outline: "border border-graphite-300 bg-transparent text-graphite-800 hover:border-petrol-600 hover:text-petrol-600",
-        ghost: "bg-transparent text-graphite-700 hover:bg-graphite-100",
-        dark: "bg-graphite-800 text-white hover:bg-graphite-900",
+        primary: "bg-forest-600 text-white hover:bg-forest-700 shadow-[0_4px_20px_-6px_rgb(30_74_71_/0.5)]",
+        gold: "gradient-gold text-charcoal-900 hover:brightness-110 shadow-[0_4px_20px_-6px_rgb(229_167_58_/0.6)]",
+        outline: "border border-charcoal-300 bg-transparent text-charcoal-800 hover:border-forest-600 hover:text-forest-600",
+        ghost: "bg-transparent text-charcoal-700 hover:bg-charcoal-100",
+        dark: "bg-charcoal-800 text-white hover:bg-charcoal-900",
       },
       size: {
         sm: "h-9 px-4 text-sm rounded-lg",

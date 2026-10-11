@@ -27,22 +27,22 @@ const FOOTER_LINKS = {
 
 export function Footer() {
   return (
-    <footer className="mt-24 bg-graphite-900 text-graphite-300">
+    <footer className="mt-24 bg-charcoal-900 text-charcoal-300">
       <div className="container-x py-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo variant="light" />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-graphite-400">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-charcoal-400">
               Premium mebel va interyer mahsulotlari. Toshkent boylab bepul yetkazib berish. 12 oy kafolat.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a href="https://instagram.com/ranger" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-graphite-300 hover:bg-gold-400 hover:text-graphite-900 transition-colors">
+              <a href="https://instagram.com/ranger" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-charcoal-300 hover:bg-gold-400 hover:text-charcoal-900 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="https://t.me/rangerbek" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-graphite-300 hover:bg-gold-400 hover:text-graphite-900 transition-colors">
+              <a href="https://t.me/rangerbek" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-charcoal-300 hover:bg-gold-400 hover:text-charcoal-900 transition-colors">
                 <Send className="h-4 w-4" />
               </a>
-              <a href="mailto:pubgkir40@gmail.com" aria-label="Email" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-graphite-300 hover:bg-gold-400 hover:text-graphite-900 transition-colors">
+              <a href="mailto:pubgkir40@gmail.com" aria-label="Email" className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-charcoal-300 hover:bg-gold-400 hover:text-charcoal-900 transition-colors">
                 <Mail className="h-4 w-4" />
               </a>
             </div>
@@ -92,16 +92,16 @@ export function Footer() {
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
                 <span>Toshkent, Ozbekiston</span>
               </li>
-              <li className="text-graphite-400">Dush-Yak . 24/7</li>
+              <li className="text-charcoal-400">Dush-Yak . 24/7</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-graphite-500">
+          <p className="text-xs text-charcoal-500">
             (c) 2024 LOFTMIR INTERER. Barcha huquqlar himoyalangan.
           </p>
-          <p className="text-xs text-graphite-500">
+          <p className="text-xs text-charcoal-500">
             Premium mebel brendi uchun ishlab chiqilgan.
           </p>
         </div>

@@ -2,25 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, ShoppingBag, Star } from "lucide-react";
+import { Heart, ShoppingBag, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import type { Product } from "@/lib/types";
-import { Badge } from "@/components/ui/Badge";
 import { useCartStore } from "@/lib/store/cart";
 import { useFavoritesStore } from "@/lib/store/favorites";
 import { cn, formatUZS } from "@/lib/utils";
 
 export function ProductCard({ product }: { product: Product }) {
   const [imgError, setImgError] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
 
   const favItems = useFavoritesStore((s) => s.items);
   const toggleFav = useFavoritesStore((s) => s.toggle);
   const isFav = favItems.some((i) => i.productId === product.id);
 
-  const hasDiscount = !!product.compareAtPrice && product.compareAtPrice > product.price;
+  const hasDiscount =
+    !!product.compareAtPrice && product.compareAtPrice > product.price;
   const discountPercent = hasDiscount
-    ? Math.round(((product.compareAtPrice! - product.price) / product.compareAtPrice!) * 100)
+    ? Math.round(
+        ((product.compareAtPrice! - product.price) / product.compareAtPrice!) * 100
+      )
     : 0;
 
   const coverImage = product.images[0];
@@ -38,92 +41,134 @@ export function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <article className="group hover-lift relative overflow-hidden rounded-2xl border border-graphite-200/60 bg-white">
-      <Link href={`/mahsulot/${product.slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-graphite-100">
-          {!imgError ? (
-            <Image
-              src={coverImage}
-              alt={product.name.uz}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <div
-              className="absolute inset-0 flex items-center justify-center"
-              style={{
-                background:
-                  "linear-gradient(135deg, #1e4a47 0%, #256c63 60%, #0f2a28 100%)",
-              }}
-            >
-              <span className="font-display text-6xl text-white/30">
-                {product.name.uz.charAt(0)}
-              </span>
-            </div>
-          )}
-
-          <div className="absolute left-3 top-3 flex flex-col gap-2">
-            {product.isNew && <Badge variant="new">Yangi</Badge>}
-            {product.isBestseller && <Badge variant="gold">Bestseller</Badge>}
-            {hasDiscount && <Badge variant="sale">-{discountPercent}%</Badge>}
+    <article
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+  className="group relative flex flex-col transition-transform duration-500 hover:-translate-y-1"
+>
+      {/* Image container */}
+      <Link
+        href={`/mahsulot/${product.slug}`}
+        className="relative block aspect-[4/5] overflow-hidden rounded-2xl bg-ivory-200"
+      >
+        {!imgError ? (
+          <Image
+            src={coverImage}
+            alt={product.name.uz}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className={cn(
+              "object-cover transition-transform duration-[1200ms] ease-expo",
+              hovered ? "scale-[1.06]" : "scale-100"
+            )}
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center gradient-forest">
+            <span className="font-serif text-6xl text-ivory-200/20">
+              {product.name.uz.charAt(0)}
+            </span>
           </div>
+        )}
+
+        {/* Badges */}
+        <div className="absolute left-4 top-4 flex flex-col gap-2">
+          {product.isNew && (
+            <span className="label-mono inline-flex items-center rounded-full bg-forest-600 px-2.5 py-1 text-[10px] text-ivory-100">
+              Yangi
+            </span>
+          )}
+          {product.isBestseller && (
+            <span className="label-mono inline-flex items-center rounded-full bg-gold-400 px-2.5 py-1 text-[10px] text-charcoal-800">
+              Bestseller
+            </span>
+          )}
+          {hasDiscount && (
+            <span className="label-mono inline-flex items-center rounded-full bg-charcoal-700 px-2.5 py-1 text-[10px] text-ivory-100">
+              −{discountPercent}%
+            </span>
+          )}
+        </div>
+
+        {/* Favorite button — always visible, subtle */}
+        <button
+          type="button"
+          aria-label={isFav ? "Sevimlilardan o‘chirish" : "Sevimlilarga qo‘shish"}
+          onClick={handleFav}
+          className={cn(
+            "absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full backdrop-blur-md transition-all duration-300",
+            isFav
+              ? "bg-gold-400 text-charcoal-800"
+              : "bg-ivory-100/70 text-charcoal-500 hover:bg-ivory-100 hover:text-charcoal-800"
+          )}
+        >
+          <Heart
+            className={cn(
+              "h-[15px] w-[15px] transition-all",
+              isFav && "fill-current"
+            )}
+          />
+        </button>
+
+        {/* Bottom overlay — appears on hover */}
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-charcoal-800/85 px-4 py-3 backdrop-blur-md transition-all duration-500",
+            hovered
+              ? "translate-y-0 opacity-100"
+              : "translate-y-4 opacity-0"
+          )}
+        >
+          <span className="label-mono text-[10px] text-ivory-200/80">
+            Batafsil ko‘rish
+          </span>
+          <ArrowUpRight className="h-3.5 w-3.5 text-gold-400" />
         </div>
       </Link>
 
-      <button
-        type="button"
-        aria-label={isFav ? "Sevimlilardan o‘chirish" : "Sevimlilarga qo‘shish"}
-        onClick={handleFav}
-        className={cn(
-          "absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full backdrop-blur-md transition-all",
-          isFav
-            ? "bg-red-500 text-white scale-105"
-            : "bg-white/80 text-graphite-700 hover:bg-white hover:scale-110"
-        )}
-      >
-        <Heart className={cn("h-4 w-4 transition-all", isFav && "fill-current")} />
-      </button>
+      {/* Info */}
+      <div className="mt-4 flex flex-1 flex-col">
+        {/* Category label */}
+        <span className="label-mono text-[10px] text-charcoal-400">
+          {product.categorySlug}
+        </span>
 
-      <div className="p-4">
-        <div className="flex items-center gap-1 text-xs text-gold-500">
-          <Star className="h-3.5 w-3.5 fill-current" />
-          <span className="table-num font-semibold text-graphite-700">
-            {product.rating.toFixed(1)}
-          </span>
-          <span className="text-graphite-400">({product.reviewCount})</span>
-        </div>
-
-        <Link href={`/mahsulot/${product.slug}`}>
-          <h3 className="mt-1.5 line-clamp-1 text-base font-semibold text-graphite-800 transition-colors group-hover:text-petrol-600">
-            {product.name.uz}
-          </h3>
+        {/* Title */}
+        <Link
+          href={`/mahsulot/${product.slug}`}
+          className="mt-2 line-clamp-1 font-serif text-lg font-semibold tracking-tight text-charcoal-800 transition-colors hover:text-forest-600"
+        >
+          {product.name.uz}
         </Link>
 
-        <p className="mt-0.5 line-clamp-1 text-xs text-graphite-500">
+        {/* Short desc */}
+        <p className="mt-1 line-clamp-1 text-xs text-charcoal-400">
           {product.shortDescription.uz}
         </p>
 
-        <div className="mt-3 flex items-center gap-1.5">
-          {product.colors.slice(0, 4).map((c) => (
-            <span
-              key={c.hex}
-              title={c.name.uz}
-              className="h-3.5 w-3.5 rounded-full border border-graphite-200"
-              style={{ backgroundColor: c.hex }}
-            />
-          ))}
-        </div>
+        {/* Colors */}
+        {product.colors.length > 0 && (
+          <div className="mt-3 flex items-center gap-1.5">
+            {product.colors.slice(0, 4).map((c) => (
+              <span
+                key={c.hex}
+                title={c.name.uz}
+                className="h-3 w-3 rounded-full ring-1 ring-charcoal-700/10"
+                style={{ backgroundColor: c.hex }}
+              />
+            ))}
+          </div>
+        )}
 
-        <div className="mt-4 flex items-end justify-between gap-2">
+        {/* Price + Add to cart */}
+        <div className="mt-auto flex items-end justify-between gap-3 pt-4">
           <div className="flex flex-col">
             {hasDiscount && (
-              <span className="price-text text-xs text-graphite-400 line-through">
+              <span className="price-text text-[11px] text-charcoal-300 line-through">
                 {formatUZS(product.compareAtPrice!)}
               </span>
             )}
-            <span className="price-display text-lg text-graphite-900">
+            <span className="price-display text-base text-charcoal-800">
               {formatUZS(product.price)}
             </span>
           </div>
@@ -132,9 +177,9 @@ export function ProductCard({ product }: { product: Product }) {
             type="button"
             aria-label="Savatga qo‘shish"
             onClick={() => addItem(product)}
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-petrol-600 text-white transition-all hover:scale-105 hover:bg-petrol-700 active:scale-95"
+            className="group/btn relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-xl bg-forest-600 text-ivory-100 transition-all hover:bg-forest-700 active:scale-95"
           >
-            <ShoppingBag className="h-4 w-4" />
+            <ShoppingBag className="h-[15px] w-[15px] transition-transform group-hover/btn:scale-110" />
           </button>
         </div>
       </div>

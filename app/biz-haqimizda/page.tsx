@@ -7,10 +7,10 @@ export default function AboutPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">
           Biz haqimizda
         </p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-graphite-900 md:text-5xl">
+        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
           LOFTMIR INTERER
         </h1>
-        <div className="prose prose-lg mt-8 space-y-5 text-graphite-600">
+        <div className="prose prose-lg mt-8 space-y-5 text-charcoal-600">
           <p className="text-base leading-relaxed">
             LOFTMIR INTERER — zamonaviy interyer uchun premium mebel ishlab chiqaruvchi brend. Biz tabiiy materiallar, qo‘lda yasalgan sifat va nozik dizaynni qadrlaymiz.
           </p>
@@ -25,9 +25,9 @@ export default function AboutPage() {
             { n: "7+", l: "Yillik tajriba" },
             { n: "100%", l: "Sifat kafolati" },
           ].map((s) => (
-            <div key={s.l} className="rounded-2xl border border-graphite-200/60 bg-white p-6 text-center">
+            <div key={s.l} className="rounded-2xl border border-charcoal-200/60 bg-white p-6 text-center">
               <div className="font-display text-3xl font-bold text-gold-500">{s.n}</div>
-              <p className="mt-1 text-xs text-graphite-500">{s.l}</p>
+              <p className="mt-1 text-xs text-charcoal-500">{s.l}</p>
             </div>
           ))}
         </div>

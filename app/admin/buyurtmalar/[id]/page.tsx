@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -61,7 +61,7 @@ export default function AdminOrderDetailPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="h-10 w-10 animate-spin rounded-full border-2 border-graphite-200 border-t-petrol-600" />
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
       </div>
     );
   }
@@ -72,7 +72,7 @@ export default function AdminOrderDetailPage() {
         <p className="text-sm text-red-600">Buyurtma topilmadi</p>
         <Link
           href="/admin/buyurtmalar"
-          className="mt-4 inline-block text-sm font-semibold text-petrol-600"
+          className="mt-4 inline-block text-sm font-semibold text-forest-600"
         >
           Ro‘yxatga qaytish
         </Link>
@@ -98,7 +98,7 @@ export default function AdminOrderDetailPage() {
     <div className="mx-auto max-w-5xl">
       <Link
         href="/admin/buyurtmalar"
-        className="inline-flex items-center gap-2 text-xs font-medium text-graphite-500 hover:text-petrol-600"
+        className="inline-flex items-center gap-2 text-xs font-medium text-charcoal-500 hover:text-forest-600"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Buyurtmalarga qaytish
@@ -106,10 +106,10 @@ export default function AdminOrderDetailPage() {
 
       <div className="mt-4 flex flex-col justify-between gap-4 md:flex-row md:items-start">
         <div>
-          <h1 className="font-display text-2xl font-bold text-graphite-900">
+          <h1 className="font-display text-2xl font-bold text-charcoal-900">
             {order.number}
           </h1>
-          <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-graphite-500">
+          <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-charcoal-500">
             <span className="inline-flex items-center gap-1">
               <Calendar className="h-3.5 w-3.5" />
               {date.toLocaleDateString("uz-UZ", {
@@ -125,7 +125,7 @@ export default function AdminOrderDetailPage() {
         <div className="flex gap-2">
           <button
             onClick={() => window.print()}
-            className="inline-flex h-10 items-center gap-2 rounded-xl border border-graphite-200 px-4 text-xs font-medium hover:bg-graphite-50"
+            className="inline-flex h-10 items-center gap-2 rounded-xl border border-charcoal-200 px-4 text-xs font-medium hover:bg-charcoal-50"
           >
             <Printer className="h-3.5 w-3.5" />
             Chop etish
@@ -149,12 +149,12 @@ export default function AdminOrderDetailPage() {
 
       <div className="mt-6 grid gap-4 lg:grid-cols-3">
         <div className="space-y-4 lg:col-span-2">
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-lg font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-lg font-bold text-charcoal-900">
               Status
             </h2>
-            <p className="mt-1 text-xs text-graphite-500">
-              Joriy: <strong className="text-graphite-800">{STATUS_LABEL[order.status]}</strong>
+            <p className="mt-1 text-xs text-charcoal-500">
+              Joriy: <strong className="text-charcoal-800">{STATUS_LABEL[order.status]}</strong>
             </p>
             <div className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-3">
               {ALL_STATUSES.map((s) => {
@@ -166,8 +166,8 @@ export default function AdminOrderDetailPage() {
                     className={cn(
                       "rounded-xl border px-4 py-3 text-xs font-semibold transition-all text-left",
                       isActive
-                        ? "border-petrol-600 bg-petrol-600 text-white"
-                        : "border-graphite-200 hover:border-petrol-600 hover:bg-petrol-600/5"
+                        ? "border-forest-600 bg-forest-600 text-white"
+                        : "border-charcoal-200 hover:border-forest-600 hover:bg-forest-600/5"
                     )}
                   >
                     {STATUS_LABEL[s]}
@@ -177,53 +177,53 @@ export default function AdminOrderDetailPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-lg font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-lg font-bold text-charcoal-900">
               Buyurtma tarkibi
             </h2>
             <div className="mt-4 space-y-3">
               {Array.from({ length: order.itemsCount }).map((_, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 rounded-xl border border-graphite-100 p-3"
+                  className="flex items-center gap-3 rounded-xl border border-charcoal-100 p-3"
                 >
-                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-graphite-100">
-                    <Package className="h-5 w-5 text-graphite-400" />
+                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-charcoal-100">
+                    <Package className="h-5 w-5 text-charcoal-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-graphite-800">
+                    <p className="text-sm font-medium text-charcoal-800">
                       Mahsulot #{idx + 1}
                     </p>
-                    <p className="text-xs text-graphite-500">
+                    <p className="text-xs text-charcoal-500">
                       1 x {formatUZS(Math.round(order.total / order.itemsCount))}
                     </p>
                   </div>
-                  <span className="text-sm font-semibold text-graphite-800">
+                  <span className="text-sm font-semibold text-charcoal-800">
                     {formatUZS(Math.round(order.total / order.itemsCount))}
                   </span>
                 </div>
               ))}
             </div>
-            <div className="mt-5 space-y-2 border-t border-graphite-100 pt-4 text-sm">
+            <div className="mt-5 space-y-2 border-t border-charcoal-100 pt-4 text-sm">
               <div className="flex justify-between">
-                <span className="text-graphite-500">Mahsulotlar</span>
+                <span className="text-charcoal-500">Mahsulotlar</span>
                 <span className="font-medium">{formatUZS(order.total)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-graphite-500">Yetkazish</span>
+                <span className="text-charcoal-500">Yetkazish</span>
                 <span className="font-medium text-emerald-600">Bepul</span>
               </div>
-              <div className="flex justify-between border-t border-graphite-100 pt-2">
-                <span className="font-semibold text-graphite-800">Jami</span>
-                <span className="font-display text-xl font-bold text-graphite-900">
+              <div className="flex justify-between border-t border-charcoal-100 pt-2">
+                <span className="font-semibold text-charcoal-800">Jami</span>
+                <span className="font-display text-xl font-bold text-charcoal-900">
                   {formatUZS(order.total)}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-lg font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-lg font-bold text-charcoal-900">
               Ichki izoh
             </h2>
             <textarea
@@ -231,12 +231,12 @@ export default function AdminOrderDetailPage() {
               onChange={(e) => setNote(e.target.value)}
               rows={3}
               placeholder="Faqat adminlar ko‘radigan izoh..."
-              className="mt-3 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-3 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
             />
             <div className="mt-3 flex justify-end">
               <button
                 onClick={handleSaveNote}
-                className="inline-flex h-10 items-center gap-2 rounded-xl bg-petrol-600 px-4 text-xs font-semibold text-white hover:bg-petrol-700"
+                className="inline-flex h-10 items-center gap-2 rounded-xl bg-forest-600 px-4 text-xs font-semibold text-white hover:bg-forest-700"
               >
                 <Save className="h-3.5 w-3.5" />
                 Izohni saqlash
@@ -246,8 +246,8 @@ export default function AdminOrderDetailPage() {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-base font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-base font-bold text-charcoal-900">
               Mijoz
             </h2>
             <div className="mt-4 space-y-3">
@@ -256,8 +256,8 @@ export default function AdminOrderDetailPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-base font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-base font-bold text-charcoal-900">
               Yetkazish manzili
             </h2>
             <div className="mt-4">
@@ -269,8 +269,8 @@ export default function AdminOrderDetailPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display text-base font-bold text-graphite-900">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display text-base font-bold text-charcoal-900">
               Status tarixi
             </h2>
             <ol className="mt-4 space-y-4">
@@ -279,24 +279,24 @@ export default function AdminOrderDetailPage() {
                   <CheckCircle2 className="h-3.5 w-3.5" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-graphite-800">
+                  <p className="text-xs font-semibold text-charcoal-800">
                     Buyurtma qabul qilindi
                   </p>
-                  <p className="mt-0.5 text-[11px] text-graphite-500">
+                  <p className="mt-0.5 text-[11px] text-charcoal-500">
                     {date.toLocaleString("uz-UZ")}
                   </p>
                 </div>
               </li>
               {order.status !== "pending" && (
                 <li className="flex gap-3">
-                  <div className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-petrol-600 text-white">
+                  <div className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-forest-600 text-white">
                     <CheckCircle2 className="h-3.5 w-3.5" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-graphite-800">
+                    <p className="text-xs font-semibold text-charcoal-800">
                       {STATUS_LABEL[order.status]}
                     </p>
-                    <p className="mt-0.5 text-[11px] text-graphite-500">
+                    <p className="mt-0.5 text-[11px] text-charcoal-500">
                       Hozirgi holat
                     </p>
                   </div>
@@ -311,20 +311,20 @@ export default function AdminOrderDetailPage() {
       {confirmDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-graphite-900/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-charcoal-900/50 backdrop-blur-sm"
             onClick={() => setConfirmDelete(false)}
           />
           <div className="relative w-full max-w-sm rounded-2xl bg-white p-6">
-            <h3 className="font-display text-lg font-bold text-graphite-900">
+            <h3 className="font-display text-lg font-bold text-charcoal-900">
               O‘chirishni tasdiqlang
             </h3>
-            <p className="mt-2 text-sm text-graphite-600">
+            <p className="mt-2 text-sm text-charcoal-600">
               <strong>{order.number}</strong> buyurtmasini o‘chirishni xohlaysizmi?
             </p>
             <div className="mt-6 flex gap-3">
               <button
                 onClick={() => setConfirmDelete(false)}
-                className="h-11 flex-1 rounded-xl border border-graphite-200 text-sm font-medium hover:bg-graphite-50"
+                className="h-11 flex-1 rounded-xl border border-charcoal-200 text-sm font-medium hover:bg-charcoal-50"
               >
                 Bekor qilish
               </button>
@@ -356,12 +356,12 @@ function InfoRow({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-petrol-600/5 text-petrol-600">
+      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-forest-600/5 text-forest-600">
         <Icon className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-[11px] text-graphite-500">{label}</p>
-        <p className="text-sm font-medium text-graphite-800 break-words">{value}</p>
+        <p className="text-[11px] text-charcoal-500">{label}</p>
+        <p className="text-sm font-medium text-charcoal-800 break-words">{value}</p>
       </div>
     </div>
   );

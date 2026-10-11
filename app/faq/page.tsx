@@ -14,22 +14,22 @@ export default function FAQPage() {
     <div className="container-x py-12">
       <div className="mx-auto max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">FAQ</p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-graphite-900 md:text-5xl">
+        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
           Ko‘p so‘raladigan savollar
         </h1>
 
         <div className="mt-10 space-y-3">
           {faqs.map((f) => (
-            <details key={f.q} className="group rounded-2xl border border-graphite-200/60 bg-white p-5 open:border-petrol-600/50">
-              <summary className="cursor-pointer list-none text-base font-semibold text-graphite-800 marker:hidden">
+            <details key={f.q} className="group rounded-2xl border border-charcoal-200/60 bg-white p-5 open:border-forest-600/50">
+              <summary className="cursor-pointer list-none text-base font-semibold text-charcoal-800 marker:hidden">
                 <span className="flex items-center justify-between gap-4">
                   {f.q}
-                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-graphite-200 text-graphite-500 transition-transform group-open:rotate-45">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-charcoal-200 text-charcoal-500 transition-transform group-open:rotate-45">
                     +
                   </span>
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-graphite-600">{f.a}</p>
+              <p className="mt-3 text-sm leading-relaxed text-charcoal-600">{f.a}</p>
             </details>
           ))}
         </div>

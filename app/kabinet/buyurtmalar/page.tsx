@@ -42,26 +42,26 @@ export default function OrdersPage() {
   if (!loaded) {
     return (
       <div className="flex justify-center py-20">
-        <div className="h-10 w-10 animate-spin rounded-full border-2 border-graphite-200 border-t-petrol-600" />
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
       </div>
     );
   }
 
   if (orders.length === 0) {
     return (
-      <div className="rounded-2xl border border-dashed border-graphite-200 bg-graphite-50 py-20 text-center">
+      <div className="rounded-2xl border border-dashed border-charcoal-200 bg-charcoal-50 py-20 text-center">
         <div className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-white shadow-soft">
-          <ShoppingBag className="h-8 w-8 text-graphite-400" />
+          <ShoppingBag className="h-8 w-8 text-charcoal-400" />
         </div>
-        <h2 className="mt-5 font-display text-xl font-bold text-graphite-800">
+        <h2 className="mt-5 font-display text-xl font-bold text-charcoal-800">
           Buyurtmalar yo‘q
         </h2>
-        <p className="mt-2 text-sm text-graphite-500">
+        <p className="mt-2 text-sm text-charcoal-500">
           Hali buyurtma bermagansiz
         </p>
         <Link
           href="/mahsulotlar"
-          className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+          className="mt-6 inline-flex h-11 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
         >
           Xaridni boshlash
           <ArrowRight className="h-4 w-4" />
@@ -73,10 +73,10 @@ export default function OrdersPage() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h2 className="price-display text-xl text-graphite-900">
+        <h2 className="price-display text-xl text-charcoal-900">
           Buyurtmalarim
         </h2>
-        <span className="text-xs text-graphite-500">
+        <span className="text-xs text-charcoal-500">
           {orders.length} ta buyurtma
         </span>
       </div>
@@ -99,19 +99,19 @@ export default function OrdersPage() {
         return (
           <div
             key={order.id}
-            className="overflow-hidden rounded-2xl border border-graphite-200/60 bg-white transition-all hover:border-petrol-600/50 hover:shadow-soft"
+            className="overflow-hidden rounded-2xl border border-charcoal-200/60 bg-white transition-all hover:border-forest-600/50 hover:shadow-soft"
           >
             {/* Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-graphite-100 bg-graphite-50/50 px-5 py-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-charcoal-100 bg-charcoal-50/50 px-5 py-4">
               <div className="flex items-center gap-4">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-petrol-600/10 text-petrol-600">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-forest-600/10 text-forest-600">
                   <Package className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-display text-base font-bold text-graphite-900">
+                  <p className="font-display text-base font-bold text-charcoal-900">
                     {order.number}
                   </p>
-                  <p className="mt-0.5 text-[11px] text-graphite-500">
+                  <p className="mt-0.5 text-[11px] text-charcoal-500">
                     {dateStr} · {timeStr}
                   </p>
                 </div>
@@ -137,43 +137,43 @@ export default function OrdersPage() {
                   {order.items.slice(0, 3).map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-graphite-100"
+                      className="relative h-14 w-14 overflow-hidden rounded-xl border-2 border-white bg-charcoal-100"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
                     </div>
                   ))}
                   {order.items.length > 3 && (
-                    <div className="grid h-14 w-14 place-items-center rounded-xl border-2 border-white bg-graphite-100 text-xs font-bold text-graphite-600">
+                    <div className="grid h-14 w-14 place-items-center rounded-xl border-2 border-white bg-charcoal-100 text-xs font-bold text-charcoal-600">
                       +{order.items.length - 3}
                     </div>
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="line-clamp-1 text-sm font-medium text-graphite-800">
+                  <p className="line-clamp-1 text-sm font-medium text-charcoal-800">
                     {order.items[0].name}
                     {order.items.length > 1 && (
-                      <span className="text-graphite-400">
+                      <span className="text-charcoal-400">
                         {" "}va yana {order.items.length - 1} ta
                       </span>
                     )}
                   </p>
-                  <p className="mt-0.5 text-xs text-graphite-500">
+                  <p className="mt-0.5 text-xs text-charcoal-500">
                     Jami {totalItems} ta mahsulot
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-display price-text text-lg font-bold text-graphite-900">
+                  <p className="font-display price-text text-lg font-bold text-charcoal-900">
                     {formatUZS(order.total)}
                   </p>
                 </div>
               </div>
 
               {/* Actions */}
-              <div className="mt-5 flex flex-wrap gap-2 border-t border-graphite-100 pt-4">
+              <div className="mt-5 flex flex-wrap gap-2 border-t border-charcoal-100 pt-4">
                 <Link
                   href={`/buyurtma/holat?number=${order.number}`}
-                  className="inline-flex h-10 items-center gap-2 rounded-xl bg-petrol-600 px-4 text-xs font-semibold text-white hover:bg-petrol-700"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl bg-forest-600 px-4 text-xs font-semibold text-white hover:bg-forest-700"
                 >
                   Holatni ko‘rish
                   <ChevronRight className="h-3.5 w-3.5" />
@@ -196,7 +196,7 @@ export default function OrdersPage() {
                       );
                     });
                   }}
-                  className="inline-flex h-10 items-center gap-2 rounded-xl border border-graphite-200 px-4 text-xs font-medium text-graphite-700 hover:border-petrol-600 hover:text-petrol-600"
+                  className="inline-flex h-10 items-center gap-2 rounded-xl border border-charcoal-200 px-4 text-xs font-medium text-charcoal-700 hover:border-forest-600 hover:text-forest-600"
                 >
                   <RotateCw className="h-3.5 w-3.5" />
                   Qayta buyurtma

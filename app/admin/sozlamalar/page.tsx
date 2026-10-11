@@ -97,10 +97,10 @@ export default function AdminSettingsPage() {
     <div className="mx-auto max-w-4xl space-y-6">
       {/* Header */}
       <div>
-        <h1 className="heading-display text-2xl text-graphite-900">
+        <h1 className="heading-display text-2xl text-charcoal-900">
           Sozlamalar
         </h1>
-        <p className="mt-1 text-sm text-graphite-500">
+        <p className="mt-1 text-sm text-charcoal-500">
           Sayt bo‘yicha umumiy ma’lumotlar
         </p>
       </div>
@@ -174,14 +174,14 @@ export default function AdminSettingsPage() {
       <Card title="Savdo siyosati" icon={Truck}>
         <div className="grid gap-4 md:grid-cols-2">
           <div className="md:col-span-2">
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               Yetkazib berish ma’lumoti
             </label>
             <textarea
               value={settings.deliveryInfo}
               onChange={(e) => update({ deliveryInfo: e.target.value })}
               rows={2}
-              className="mt-2 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
             />
           </div>
           <Field
@@ -203,20 +203,20 @@ export default function AdminSettingsPage() {
       <Card title="Valyuta va til" icon={Globe}>
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               Valyuta
             </label>
             <select
               value={settings.currency}
               onChange={(e) => update({ currency: e.target.value })}
-              className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
             >
               <option value="UZS">UZS (so‘m)</option>
               <option value="USD">USD ($)</option>
             </select>
           </div>
           <div>
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               Asosiy til
             </label>
             <select
@@ -224,7 +224,7 @@ export default function AdminSettingsPage() {
               onChange={(e) =>
                 update({ language: e.target.value as "uz" | "ru" | "en" })
               }
-              className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
             >
               <option value="uz">O‘zbekcha</option>
               <option value="ru">Русский</option>
@@ -241,22 +241,22 @@ export default function AdminSettingsPage() {
             type="checkbox"
             checked={settings.showAnnouncement}
             onChange={(e) => update({ showAnnouncement: e.target.checked })}
-            className="h-5 w-5 accent-petrol-600"
+            className="h-5 w-5 accent-forest-600"
           />
-          <span className="text-sm font-medium text-graphite-700">
+          <span className="text-sm font-medium text-charcoal-700">
             Bosh sahifada e’lonni ko‘rsatish
           </span>
         </label>
         {settings.showAnnouncement && (
           <div className="mt-4">
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               E’lon matni
             </label>
             <input
               value={settings.announcement}
               onChange={(e) => update({ announcement: e.target.value })}
               placeholder="Masalan: Yangi kolleksiya chegirmada!"
-              className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
             />
           </div>
         )}
@@ -266,13 +266,13 @@ export default function AdminSettingsPage() {
       <div className="flex justify-between gap-3">
         <button
           onClick={reset}
-          className="h-11 rounded-xl border border-graphite-200 px-5 text-sm font-medium text-graphite-600 hover:bg-graphite-50"
+          className="h-11 rounded-xl border border-charcoal-200 px-5 text-sm font-medium text-charcoal-600 hover:bg-charcoal-50"
         >
           Standartga qaytarish
         </button>
         <button
           onClick={handleSave}
-          className="inline-flex h-11 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+          className="inline-flex h-11 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
         >
           <Save className="h-4 w-4" />
           Sozlamalarni saqlash
@@ -293,12 +293,12 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
+    <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
       <div className="mb-5 flex items-center gap-3">
-        <div className="grid h-10 w-10 place-items-center rounded-xl bg-petrol-600/10 text-petrol-600">
+        <div className="grid h-10 w-10 place-items-center rounded-xl bg-forest-600/10 text-forest-600">
           <Icon className="h-4 w-4" />
         </div>
-        <h2 className="heading-display text-lg text-graphite-900">{title}</h2>
+        <h2 className="heading-display text-lg text-charcoal-900">{title}</h2>
       </div>
       {children}
     </div>
@@ -322,10 +322,10 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-sm font-medium text-graphite-700">{label}</label>
+      <label className="text-sm font-medium text-charcoal-700">{label}</label>
       <div className="relative mt-2">
         {Icon && (
-          <Icon className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-graphite-400" />
+          <Icon className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-400" />
         )}
         <input
           type={type}
@@ -333,7 +333,7 @@ function Field({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "h-12 w-full rounded-xl border border-graphite-200 bg-white pr-4 text-sm focus:border-petrol-600 focus:outline-none",
+            "h-12 w-full rounded-xl border border-charcoal-200 bg-white pr-4 text-sm focus:border-forest-600 focus:outline-none",
             Icon ? "pl-11" : "pl-4"
           )}
         />

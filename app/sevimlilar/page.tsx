@@ -22,7 +22,7 @@ export default function FavoritesPage() {
   if (!mounted) {
     return (
       <div className="container-x flex min-h-[60vh] items-center justify-center py-12">
-        <div className="h-10 w-10 animate-spin rounded-full border-2 border-graphite-200 border-t-petrol-600" />
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
       </div>
     );
   }
@@ -30,22 +30,22 @@ export default function FavoritesPage() {
   if (items.length === 0) {
     return (
       <div className="container-x py-12">
-        <h1 className="heading-display text-4xl text-graphite-900 md:text-5xl">
+        <h1 className="heading-display text-4xl text-charcoal-900 md:text-5xl">
           Sevimlilar
         </h1>
-        <div className="mt-10 rounded-3xl border border-dashed border-graphite-200 bg-graphite-50 py-24 text-center">
+        <div className="mt-10 rounded-3xl border border-dashed border-charcoal-200 bg-charcoal-50 py-24 text-center">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-soft">
-            <Heart className="h-8 w-8 text-graphite-400" />
+            <Heart className="h-8 w-8 text-charcoal-400" />
           </div>
-          <h2 className="mt-6 heading-display text-2xl text-graphite-800">
+          <h2 className="mt-6 heading-display text-2xl text-charcoal-800">
             Sevimlilar bo‘sh
           </h2>
-          <p className="mt-2 text-sm text-graphite-500">
+          <p className="mt-2 text-sm text-charcoal-500">
             Yoqqan mahsulotlarni yurakcha bilan belgilang
           </p>
           <Link
             href="/mahsulotlar"
-            className="mt-8 inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+            className="mt-8 inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
           >
             Mahsulotlarni ko‘rish
             <ArrowRight className="h-4 w-4" />
@@ -59,16 +59,16 @@ export default function FavoritesPage() {
     <div className="container-x py-12">
       <div className="mb-8 flex items-end justify-between">
         <div>
-          <h1 className="heading-display text-4xl text-graphite-900 md:text-5xl">
+          <h1 className="heading-display text-4xl text-charcoal-900 md:text-5xl">
             Sevimlilar
           </h1>
-          <p className="mt-2 text-sm text-graphite-500">
+          <p className="mt-2 text-sm text-charcoal-500">
             {items.length} ta mahsulot
           </p>
         </div>
         <button
           onClick={clear}
-          className="inline-flex h-10 items-center gap-2 rounded-xl border border-graphite-200 px-4 text-xs font-medium text-graphite-600 hover:border-red-300 hover:text-red-500"
+          className="inline-flex h-10 items-center gap-2 rounded-xl border border-charcoal-200 px-4 text-xs font-medium text-charcoal-600 hover:border-red-300 hover:text-red-500"
         >
           <Trash2 className="h-3.5 w-3.5" />
           Tozalash
@@ -84,10 +84,10 @@ export default function FavoritesPage() {
           return (
             <article
               key={fav.productId}
-              className="group hover-lift relative overflow-hidden rounded-2xl border border-graphite-200/60 bg-white"
+              className="group hover-lift relative overflow-hidden rounded-2xl border border-charcoal-200/60 bg-white"
             >
               <Link href={`/mahsulot/${fav.slug}`} className="block">
-                <div className="relative aspect-[4/5] overflow-hidden bg-graphite-100">
+                <div className="relative aspect-[4/5] overflow-hidden bg-charcoal-100">
                   <Image
                     src={coverImage}
                     alt={fav.name}
@@ -111,17 +111,17 @@ export default function FavoritesPage() {
                 {product && (
                   <div className="flex items-center gap-1 text-xs text-gold-500">
                     <Star className="h-3.5 w-3.5 fill-current" />
-                    <span className="table-num font-semibold text-graphite-700">
+                    <span className="table-num font-semibold text-charcoal-700">
                       {product.rating.toFixed(1)}
                     </span>
-                    <span className="text-graphite-400">
+                    <span className="text-charcoal-400">
                       ({product.reviewCount})
                     </span>
                   </div>
                 )}
 
                 <Link href={`/mahsulot/${fav.slug}`}>
-                  <h3 className="mt-1.5 line-clamp-1 text-base font-semibold text-graphite-800 transition-colors group-hover:text-petrol-600">
+                  <h3 className="mt-1.5 line-clamp-1 text-base font-semibold text-charcoal-800 transition-colors group-hover:text-forest-600">
                     {fav.name}
                   </h3>
                 </Link>
@@ -129,11 +129,11 @@ export default function FavoritesPage() {
                 <div className="mt-4 flex items-end justify-between gap-2">
                   <div className="flex flex-col">
                     {hasDiscount && (
-                      <span className="price-text text-xs text-graphite-400 line-through">
+                      <span className="price-text text-xs text-charcoal-400 line-through">
                         {formatUZS(product!.compareAtPrice!)}
                       </span>
                     )}
-                    <span className="price-display text-lg text-graphite-900">
+                    <span className="price-display text-lg text-charcoal-900">
                       {formatUZS(fav.price)}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export default function FavoritesPage() {
                       type="button"
                       aria-label="Savatga qo‘shish"
                       onClick={() => addItem(product)}
-                      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-petrol-600 text-white transition-all hover:scale-105 hover:bg-petrol-700 active:scale-95"
+                      className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-forest-600 text-white transition-all hover:scale-105 hover:bg-forest-700 active:scale-95"
                     >
                       <ShoppingBag className="h-4 w-4" />
                     </button>

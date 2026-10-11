@@ -22,7 +22,7 @@ const STATUS_BADGE: Record<
 > = {
   published: { label: "Faol", cls: "bg-emerald-50 text-emerald-700" },
   draft: { label: "Qoralama", cls: "bg-amber-50 text-amber-700" },
-  archived: { label: "Arxiv", cls: "bg-graphite-100 text-graphite-600" },
+  archived: { label: "Arxiv", cls: "bg-charcoal-100 text-charcoal-600" },
 };
 
 export default function AdminProductsPage() {
@@ -56,16 +56,16 @@ export default function AdminProductsPage() {
       {/* Header */}
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
         <div>
-          <h1 className="price-display text-2xl text-graphite-900">
+          <h1 className="price-display text-2xl text-charcoal-900">
             Mahsulotlar
           </h1>
-          <p className="mt-1 text-sm text-graphite-500">
+          <p className="mt-1 text-sm text-charcoal-500">
             {items.length} ta mahsulot · {filtered.length} ko‘rsatilmoqda
           </p>
         </div>
         <Link
           href="/admin/mahsulotlar/yangi"
-          className="inline-flex h-11 items-center gap-2 rounded-xl bg-petrol-600 px-5 text-sm font-semibold text-white transition-all hover:bg-petrol-700"
+          className="inline-flex h-11 items-center gap-2 rounded-xl bg-forest-600 px-5 text-sm font-semibold text-white transition-all hover:bg-forest-700"
         >
           <Plus className="h-4 w-4" />
           Yangi mahsulot
@@ -73,19 +73,19 @@ export default function AdminProductsPage() {
       </div>
 
       {/* Filters */}
-      <div className="flex flex-col gap-3 rounded-2xl border border-graphite-200/60 bg-white p-4 md:flex-row md:items-center">
+      <div className="flex flex-col gap-3 rounded-2xl border border-charcoal-200/60 bg-white p-4 md:flex-row md:items-center">
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-graphite-400" />
+          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-400" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Nomi, slug yoki SKU bo‘yicha qidirish..."
-            className="h-11 w-full rounded-xl border border-graphite-200 bg-white pl-11 pr-4 text-sm focus:border-petrol-600 focus:outline-none"
+            className="h-11 w-full rounded-xl border border-charcoal-200 bg-white pl-11 pr-4 text-sm focus:border-forest-600 focus:outline-none"
           />
         </div>
 
-        <div className="flex gap-1 rounded-xl border border-graphite-200 bg-white p-1">
+        <div className="flex gap-1 rounded-xl border border-charcoal-200 bg-white p-1">
           {(["all", "published", "draft", "archived"] as const).map((s) => (
             <button
               key={s}
@@ -93,8 +93,8 @@ export default function AdminProductsPage() {
               className={cn(
                 "rounded-lg px-3 py-1.5 text-xs font-medium transition-all",
                 statusFilter === s
-                  ? "bg-petrol-600 text-white"
-                  : "text-graphite-600 hover:bg-graphite-100"
+                  ? "bg-forest-600 text-white"
+                  : "text-charcoal-600 hover:bg-charcoal-100"
               )}
             >
               {s === "all" && "Barchasi"}
@@ -108,20 +108,20 @@ export default function AdminProductsPage() {
 
       {/* Table */}
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-graphite-200 bg-white py-20 text-center">
-          <Package className="mx-auto h-10 w-10 text-graphite-300" />
-          <p className="mt-3 text-sm font-semibold text-graphite-700">
+        <div className="rounded-2xl border border-dashed border-charcoal-200 bg-white py-20 text-center">
+          <Package className="mx-auto h-10 w-10 text-charcoal-300" />
+          <p className="mt-3 text-sm font-semibold text-charcoal-700">
             Mahsulot topilmadi
           </p>
-          <p className="mt-1 text-xs text-graphite-500">
+          <p className="mt-1 text-xs text-charcoal-500">
             Filtrni o‘zgartiring yoki yangi mahsulot qo‘shing
           </p>
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-graphite-200/60 bg-white">
+        <div className="overflow-hidden rounded-2xl border border-charcoal-200/60 bg-white">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-graphite-50/60 text-left text-[11px] uppercase tracking-wider text-graphite-500">
+              <thead className="bg-charcoal-50/60 text-left text-[11px] uppercase tracking-wider text-charcoal-500">
                 <tr>
                   <th className="px-5 py-3 font-semibold">Mahsulot</th>
                   <th className="px-5 py-3 font-semibold">SKU</th>
@@ -131,14 +131,14 @@ export default function AdminProductsPage() {
                   <th className="px-5 py-3 text-right font-semibold">Amallar</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-graphite-100 text-sm">
+              <tbody className="divide-y divide-charcoal-100 text-sm">
                 {filtered.map((p) => {
                   const badge = STATUS_BADGE[p.status];
                   return (
-                    <tr key={p.id} className="hover:bg-graphite-50/40">
+                    <tr key={p.id} className="hover:bg-charcoal-50/40">
                       <td className="px-5 py-3">
                         <div className="flex items-center gap-3">
-                          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-graphite-100">
+                          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-charcoal-100">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={p.images[0]}
@@ -147,24 +147,24 @@ export default function AdminProductsPage() {
                             />
                           </div>
                           <div className="min-w-0">
-                            <p className="line-clamp-1 font-medium text-graphite-800">
+                            <p className="line-clamp-1 font-medium text-charcoal-800">
                               {p.name.uz}
                             </p>
-                            <p className="text-[11px] text-graphite-500 line-clamp-1">
+                            <p className="text-[11px] text-charcoal-500 line-clamp-1">
                               {p.categorySlug}
                             </p>
                           </div>
                         </div>
                       </td>
-                      <td className="px-5 py-3 font-mono text-xs text-graphite-600">
+                      <td className="px-5 py-3 font-mono text-xs text-charcoal-600">
                         {p.sku}
                       </td>
                       <td className="px-5 py-3">
-                        <p className="table-num font-semibold text-graphite-900">
+                        <p className="table-num font-semibold text-charcoal-900">
                           {formatUZS(p.price)}
                         </p>
                         {p.compareAtPrice && (
-                          <p className="text-[11px] text-graphite-400 line-through">
+                          <p className="text-[11px] text-charcoal-400 line-through">
                             {formatUZS(p.compareAtPrice)}
                           </p>
                         )}
@@ -199,10 +199,10 @@ export default function AdminProductsPage() {
                             onClick={() =>
                               setOpenMenu(openMenu === p.id ? null : p.id)
                             }
-                            className="grid h-9 w-9 place-items-center rounded-lg hover:bg-graphite-100"
+                            className="grid h-9 w-9 place-items-center rounded-lg hover:bg-charcoal-100"
                             aria-label="Amallar"
                           >
-                            <MoreVertical className="h-4 w-4 text-graphite-500" />
+                            <MoreVertical className="h-4 w-4 text-charcoal-500" />
                           </button>
 
                           {openMenu === p.id && (
@@ -211,10 +211,10 @@ export default function AdminProductsPage() {
                                 className="fixed inset-0 z-10"
                                 onClick={() => setOpenMenu(null)}
                               />
-                              <div className="absolute right-0 top-full z-20 mt-1 w-44 rounded-xl border border-graphite-200 bg-white py-1 shadow-lg">
+                              <div className="absolute right-0 top-full z-20 mt-1 w-44 rounded-xl border border-charcoal-200 bg-white py-1 shadow-lg">
                                 <Link
                                   href={`/admin/mahsulotlar/${p.id}`}
-                                  className="flex items-center gap-2 px-4 py-2 text-xs text-graphite-700 hover:bg-graphite-50"
+                                  className="flex items-center gap-2 px-4 py-2 text-xs text-charcoal-700 hover:bg-charcoal-50"
                                   onClick={() => setOpenMenu(null)}
                                 >
                                   <Edit3 className="h-3.5 w-3.5" />
@@ -223,7 +223,7 @@ export default function AdminProductsPage() {
                                 <Link
                                   href={`/mahsulot/${p.slug}`}
                                   target="_blank"
-                                  className="flex items-center gap-2 px-4 py-2 text-xs text-graphite-700 hover:bg-graphite-50"
+                                  className="flex items-center gap-2 px-4 py-2 text-xs text-charcoal-700 hover:bg-charcoal-50"
                                   onClick={() => setOpenMenu(null)}
                                 >
                                   <Eye className="h-3.5 w-3.5" />
@@ -234,7 +234,7 @@ export default function AdminProductsPage() {
                                     archiveProduct(p.id);
                                     setOpenMenu(null);
                                   }}
-                                  className="flex w-full items-center gap-2 px-4 py-2 text-xs text-graphite-700 hover:bg-graphite-50"
+                                  className="flex w-full items-center gap-2 px-4 py-2 text-xs text-charcoal-700 hover:bg-charcoal-50"
                                 >
                                   <Archive className="h-3.5 w-3.5" />
                                   Arxivlash
@@ -267,21 +267,21 @@ export default function AdminProductsPage() {
       {confirmDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-graphite-900/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-charcoal-900/50 backdrop-blur-sm"
             onClick={() => setConfirmDelete(null)}
           />
           <div className="relative w-full max-w-sm rounded-2xl bg-white p-6">
-            <h3 className="heading-display price-text text-lg font-bold text-graphite-900">
+            <h3 className="heading-display price-text text-lg font-bold text-charcoal-900">
               O‘chirishni tasdiqlang
             </h3>
-            <p className="mt-2 text-sm text-graphite-600">
+            <p className="mt-2 text-sm text-charcoal-600">
               <strong>{confirmDelete.name.uz}</strong> mahsulotini o‘chirishni
               xohlaysizmi? Bu amalni ortga qaytarib bo‘lmaydi.
             </p>
             <div className="mt-6 flex gap-3">
               <button
                 onClick={() => setConfirmDelete(null)}
-                className="h-11 flex-1 rounded-xl border border-graphite-200 text-sm font-medium hover:bg-graphite-50"
+                className="h-11 flex-1 rounded-xl border border-charcoal-200 text-sm font-medium hover:bg-charcoal-50"
               >
                 Bekor qilish
               </button>

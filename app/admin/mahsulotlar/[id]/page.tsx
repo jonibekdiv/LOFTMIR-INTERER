@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
@@ -28,7 +28,7 @@ export default function EditProductPage() {
         <p className="text-sm text-red-600">Mahsulot topilmadi</p>
         <Link
           href="/admin/mahsulotlar"
-          className="mt-4 inline-block text-sm font-semibold text-petrol-600"
+          className="mt-4 inline-block text-sm font-semibold text-forest-600"
         >
           Ro‘yxatga qaytish
         </Link>
@@ -47,7 +47,7 @@ export default function EditProductPage() {
     <div className="mx-auto max-w-4xl">
       <Link
         href="/admin/mahsulotlar"
-        className="inline-flex items-center gap-2 text-xs font-medium text-graphite-500 hover:text-petrol-600"
+        className="inline-flex items-center gap-2 text-xs font-medium text-charcoal-500 hover:text-forest-600"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Mahsulotlarga qaytish
@@ -55,10 +55,10 @@ export default function EditProductPage() {
 
       <div className="mt-4 flex items-start justify-between">
         <div>
-          <h1 className="font-display text-2xl font-bold text-graphite-900">
+          <h1 className="font-display text-2xl font-bold text-charcoal-900">
             Tahrirlash
           </h1>
-          <p className="mt-1 text-sm text-graphite-500">{product.name.uz}</p>
+          <p className="mt-1 text-sm text-charcoal-500">{product.name.uz}</p>
         </div>
         <button
           onClick={() => setConfirmDelete(true)}
@@ -101,7 +101,7 @@ export default function EditProductPage() {
             />
           </div>
           <div className="mt-5">
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               Tavsif
             </label>
             <textarea
@@ -116,7 +116,7 @@ export default function EditProductPage() {
                 })
               }
               rows={4}
-              className="mt-2 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
             />
           </div>
         </Card>
@@ -206,13 +206,13 @@ export default function EditProductPage() {
         <Card title="Kategoriya va status">
           <div className="grid gap-5 md:grid-cols-2">
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Kategoriya
               </label>
               <select
                 value={form.categorySlug ?? "javonlar"}
                 onChange={(e) => setForm({ ...form, categorySlug: e.target.value })}
-                className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+                className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
               >
                 {categories.map((c) => (
                   <option key={c.slug} value={c.slug}>
@@ -222,7 +222,7 @@ export default function EditProductPage() {
               </select>
             </div>
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Status
               </label>
               <select
@@ -233,7 +233,7 @@ export default function EditProductPage() {
                     status: e.target.value as AdminProduct["status"],
                   })
                 }
-                className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+                className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
               >
                 <option value="draft">Qoralama</option>
                 <option value="published">Faol</option>
@@ -247,9 +247,9 @@ export default function EditProductPage() {
                 type="checkbox"
                 checked={form.isFeatured ?? false}
                 onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
-                className="h-5 w-5 accent-petrol-600"
+                className="h-5 w-5 accent-forest-600"
               />
-              <span className="text-sm font-medium text-graphite-700">
+              <span className="text-sm font-medium text-charcoal-700">
                 Featured
               </span>
             </label>
@@ -258,9 +258,9 @@ export default function EditProductPage() {
                 type="checkbox"
                 checked={form.isNew ?? false}
                 onChange={(e) => setForm({ ...form, isNew: e.target.checked })}
-                className="h-5 w-5 accent-petrol-600"
+                className="h-5 w-5 accent-forest-600"
               />
-              <span className="text-sm font-medium text-graphite-700">
+              <span className="text-sm font-medium text-charcoal-700">
                 Yangi
               </span>
             </label>
@@ -269,9 +269,9 @@ export default function EditProductPage() {
                 type="checkbox"
                 checked={form.isBestseller ?? false}
                 onChange={(e) => setForm({ ...form, isBestseller: e.target.checked })}
-                className="h-5 w-5 accent-petrol-600"
+                className="h-5 w-5 accent-forest-600"
               />
-              <span className="text-sm font-medium text-graphite-700">
+              <span className="text-sm font-medium text-charcoal-700">
                 Bestseller
               </span>
             </label>
@@ -281,13 +281,13 @@ export default function EditProductPage() {
         <div className="flex justify-end gap-3">
           <Link
             href="/admin/mahsulotlar"
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-graphite-200 px-6 text-sm font-medium hover:bg-graphite-50"
+            className="inline-flex h-12 items-center justify-center rounded-xl border border-charcoal-200 px-6 text-sm font-medium hover:bg-charcoal-50"
           >
             Bekor qilish
           </Link>
           <button
             type="submit"
-            className="inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+            className="inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
           >
             <Save className="h-4 w-4" />
             Saqlash
@@ -298,20 +298,20 @@ export default function EditProductPage() {
       {confirmDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
-            className="absolute inset-0 bg-graphite-900/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-charcoal-900/50 backdrop-blur-sm"
             onClick={() => setConfirmDelete(false)}
           />
           <div className="relative w-full max-w-sm rounded-2xl bg-white p-6">
-            <h3 className="font-display text-lg font-bold text-graphite-900">
+            <h3 className="font-display text-lg font-bold text-charcoal-900">
               O‘chirishni tasdiqlang
             </h3>
-            <p className="mt-2 text-sm text-graphite-600">
+            <p className="mt-2 text-sm text-charcoal-600">
               <strong>{product.name.uz}</strong> o‘chirilsinmi?
             </p>
             <div className="mt-6 flex gap-3">
               <button
                 onClick={() => setConfirmDelete(false)}
-                className="h-11 flex-1 rounded-xl border border-graphite-200 text-sm font-medium hover:bg-graphite-50"
+                className="h-11 flex-1 rounded-xl border border-charcoal-200 text-sm font-medium hover:bg-charcoal-50"
               >
                 Bekor qilish
               </button>
@@ -334,8 +334,8 @@ export default function EditProductPage() {
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-      <h2 className="mb-5 font-display text-lg font-bold text-graphite-900">
+    <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+      <h2 className="mb-5 font-display text-lg font-bold text-charcoal-900">
         {title}
       </h2>
       {children}
@@ -356,12 +356,12 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-sm font-medium text-graphite-700">{label}</label>
+      <label className="text-sm font-medium text-charcoal-700">{label}</label>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+        className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
       />
     </div>
   );

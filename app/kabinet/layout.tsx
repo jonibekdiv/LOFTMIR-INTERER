@@ -17,7 +17,7 @@ export default function CabinetLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="container-x py-10 md:py-14">
-      <h1 className="price-display text-3xl text-graphite-900 md:text-4xl">
+      <h1 className="price-display text-3xl text-charcoal-900 md:text-4xl">
         Mijoz kabineti
       </h1>
 
@@ -37,8 +37,8 @@ export default function CabinetLayout({ children }: { children: React.ReactNode 
                   className={cn(
                     "flex shrink-0 items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all",
                     isActive
-                      ? "bg-petrol-600 text-white shadow-[0_4px_20px_-6px_rgba(30,74,71,0.4)]"
-                      : "bg-white text-graphite-700 border border-graphite-200/60 hover:border-petrol-600 hover:text-petrol-600"
+                      ? "bg-forest-600 text-white shadow-[0_4px_20px_-6px_rgba(30,74,71,0.4)]"
+                      : "bg-white text-charcoal-700 border border-charcoal-200/60 hover:border-forest-600 hover:text-forest-600"
                   )}
                 >
                   <Icon className="h-4 w-4" />

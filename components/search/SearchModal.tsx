@@ -74,28 +74,28 @@ export function SearchModal({
     <div className="fixed inset-0 z-[60] flex items-start justify-center px-4 pt-20">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-graphite-900/60 backdrop-blur-md"
+        className="absolute inset-0 bg-charcoal-900/60 backdrop-blur-md"
         onClick={onClose}
       />
 
       {/* Modal */}
       <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl">
         {/* Search input */}
-        <form onSubmit={submit} className="flex items-center gap-3 border-b border-graphite-100 px-5 py-4">
-          <Search className="h-5 w-5 shrink-0 text-graphite-400" />
+        <form onSubmit={submit} className="flex items-center gap-3 border-b border-charcoal-100 px-5 py-4">
+          <Search className="h-5 w-5 shrink-0 text-charcoal-400" />
           <input
             autoFocus
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Mahsulot yoki kategoriya qidirish..."
-            className="h-10 flex-1 bg-transparent text-base text-graphite-900 placeholder:text-graphite-400 focus:outline-none"
+            className="h-10 flex-1 bg-transparent text-base text-charcoal-900 placeholder:text-charcoal-400 focus:outline-none"
           />
           {query && (
             <button
               type="button"
               onClick={() => setQuery("")}
-              className="grid h-7 w-7 place-items-center rounded-full text-graphite-400 hover:bg-graphite-100"
+              className="grid h-7 w-7 place-items-center rounded-full text-charcoal-400 hover:bg-charcoal-100"
               aria-label="Tozalash"
             >
               <X className="h-3.5 w-3.5" />
@@ -104,7 +104,7 @@ export function SearchModal({
           <button
             type="button"
             onClick={onClose}
-            className="hidden rounded-lg border border-graphite-200 px-2 py-1 text-[10px] font-medium text-graphite-500 md:block"
+            className="hidden rounded-lg border border-charcoal-200 px-2 py-1 text-[10px] font-medium text-charcoal-500 md:block"
           >
             ESC
           </button>
@@ -115,7 +115,7 @@ export function SearchModal({
           {/* Empty state — popular searches */}
           {!query.trim() && (
             <div className="p-5">
-              <p className="label-mono mb-3 text-[11px] font-semibold uppercase tracking-wider text-graphite-500">
+              <p className="label-mono mb-3 text-[11px] font-semibold uppercase tracking-wider text-charcoal-500">
                 Mashhur qidiruvlar
               </p>
               <div className="flex flex-wrap gap-2">
@@ -123,7 +123,7 @@ export function SearchModal({
                   <button
                     key={s}
                     onClick={() => setQuery(s)}
-                    className="inline-flex items-center gap-2 rounded-xl border border-graphite-200 bg-white px-4 py-2 text-sm font-medium text-graphite-700 transition-all hover:border-petrol-600 hover:text-petrol-600"
+                    className="inline-flex items-center gap-2 rounded-xl border border-charcoal-200 bg-white px-4 py-2 text-sm font-medium text-charcoal-700 transition-all hover:border-forest-600 hover:text-forest-600"
                   >
                     <TrendingUp className="h-3.5 w-3.5" />
                     {s}
@@ -136,13 +136,13 @@ export function SearchModal({
           {/* Empty state — no results */}
           {query.trim() && results.length === 0 && matchedCategories.length === 0 && (
             <div className="py-16 text-center">
-              <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-graphite-50">
-                <Search className="h-7 w-7 text-graphite-300" />
+              <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-charcoal-50">
+                <Search className="h-7 w-7 text-charcoal-300" />
               </div>
-              <p className="mt-4 text-sm font-semibold text-graphite-700">
+              <p className="mt-4 text-sm font-semibold text-charcoal-700">
                 Hech narsa topilmadi
               </p>
-              <p className="mt-1 text-xs text-graphite-500">
+              <p className="mt-1 text-xs text-charcoal-500">
                 Boshqa so‘z bilan urinib ko‘ring
               </p>
             </div>
@@ -150,8 +150,8 @@ export function SearchModal({
 
           {/* Categories */}
           {matchedCategories.length > 0 && (
-            <div className="border-b border-graphite-100 p-4">
-              <p className="label-mono mb-2 px-1 text-[10px] font-semibold uppercase tracking-wider text-graphite-500">
+            <div className="border-b border-charcoal-100 p-4">
+              <p className="label-mono mb-2 px-1 text-[10px] font-semibold uppercase tracking-wider text-charcoal-500">
                 Kategoriyalar
               </p>
               {matchedCategories.map((c) => (
@@ -159,20 +159,20 @@ export function SearchModal({
                   key={c.slug}
                   href={`/kategoriya/${c.slug}`}
                   onClick={onClose}
-                  className="flex items-center gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-graphite-50"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-charcoal-50"
                 >
-                  <div className="grid h-9 w-9 place-items-center rounded-lg bg-petrol-600/10 text-petrol-600">
+                  <div className="grid h-9 w-9 place-items-center rounded-lg bg-forest-600/10 text-forest-600">
                     <Package className="h-4 w-4" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-graphite-800">
+                    <p className="text-sm font-medium text-charcoal-800">
                       {c.name.uz}
                     </p>
-                    <p className="text-[11px] text-graphite-500">
+                    <p className="text-[11px] text-charcoal-500">
                       {c.productCount} ta mahsulot
                     </p>
                   </div>
-                  <ArrowRight className="h-3.5 w-3.5 text-graphite-400" />
+                  <ArrowRight className="h-3.5 w-3.5 text-charcoal-400" />
                 </Link>
               ))}
             </div>
@@ -181,7 +181,7 @@ export function SearchModal({
           {/* Products */}
           {results.length > 0 && (
             <div className="p-4">
-              <p className="label-mono mb-2 px-1 text-[10px] font-semibold uppercase tracking-wider text-graphite-500">
+              <p className="label-mono mb-2 px-1 text-[10px] font-semibold uppercase tracking-wider text-charcoal-500">
                 Mahsulotlar ({results.length})
               </p>
               {results.map((p) => (
@@ -189,9 +189,9 @@ export function SearchModal({
                   key={p.id}
                   href={`/mahsulot/${p.slug}`}
                   onClick={onClose}
-                  className="flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-graphite-50"
+                  className="flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-charcoal-50"
                 >
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-graphite-100">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-charcoal-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={p.images[0]}
@@ -200,15 +200,15 @@ export function SearchModal({
                     />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="line-clamp-1 text-sm font-semibold text-graphite-800">
+                    <p className="line-clamp-1 text-sm font-semibold text-charcoal-800">
                       {p.name.uz}
                     </p>
-                    <p className="line-clamp-1 text-[11px] text-graphite-500">
+                    <p className="line-clamp-1 text-[11px] text-charcoal-500">
                       {p.shortDescription.uz}
                     </p>
                   </div>
                   <div className="shrink-0 text-right">
-                    <p className="price-text text-sm font-bold text-graphite-900">
+                    <p className="price-text text-sm font-bold text-charcoal-900">
                       {formatUZS(p.price)}
                     </p>
                   </div>
@@ -219,13 +219,13 @@ export function SearchModal({
 
           {/* Footer */}
           {query.trim() && results.length > 0 && (
-            <div className="border-t border-graphite-100 bg-graphite-50/50 px-4 py-3">
+            <div className="border-t border-charcoal-100 bg-charcoal-50/50 px-4 py-3">
               <button
                 onClick={() => {
                   router.push(`/mahsulotlar?q=${encodeURIComponent(query.trim())}`);
                   onClose();
                 }}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-petrol-600 py-2.5 text-sm font-semibold text-white hover:bg-petrol-700"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-forest-600 py-2.5 text-sm font-semibold text-white hover:bg-forest-700"
               >
                 Barcha natijalarni ko‘rish
                 <ArrowRight className="h-4 w-4" />

@@ -11,11 +11,11 @@ export function Badge({
   className?: string;
 }) {
   const styles = {
-    default: "bg-petrol-600 text-white",
-    gold: "gradient-gold text-graphite-900",
+    default: "bg-forest-600 text-white",
+    gold: "gradient-gold text-charcoal-900",
     new: "bg-emerald-600 text-white",
     sale: "bg-red-600 text-white",
-    dark: "bg-graphite-800 text-white",
+    dark: "bg-charcoal-800 text-white",
   };
   return (
     <span

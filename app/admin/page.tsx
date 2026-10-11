@@ -169,15 +169,15 @@ export default function AdminDashboardPage() {
       {/* Header */}
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
         <div>
-          <h1 className="price-display text-2xl text-graphite-900">
+          <h1 className="price-display text-2xl text-charcoal-900">
             Dashboard
           </h1>
-          <p className="mt-1 text-sm text-graphite-500">
+          <p className="mt-1 text-sm text-charcoal-500">
             Umumiy ko‘rsatkichlar va statistika
           </p>
         </div>
-        <div className="flex items-center gap-2 rounded-xl border border-graphite-200 bg-white p-1">
-          <Calendar className="ml-2 h-4 w-4 text-graphite-400" />
+        <div className="flex items-center gap-2 rounded-xl border border-charcoal-200 bg-white p-1">
+          <Calendar className="ml-2 h-4 w-4 text-charcoal-400" />
           {RANGES.map((r) => (
             <button
               key={r.value}
@@ -185,8 +185,8 @@ export default function AdminDashboardPage() {
               className={cn(
                 "rounded-lg px-3 py-1.5 text-xs font-medium transition-all",
                 range === r.value
-                  ? "bg-petrol-600 text-white"
-                  : "text-graphite-600 hover:bg-graphite-100"
+                  ? "bg-forest-600 text-white"
+                  : "text-charcoal-600 hover:bg-charcoal-100"
               )}
             >
               {r.label}
@@ -230,13 +230,13 @@ export default function AdminDashboardPage() {
       {/* Charts */}
       <div className="grid gap-4 lg:grid-cols-3">
         {/* Savdo grafigi */}
-        <div className="rounded-2xl border border-graphite-200/60 bg-white p-5 lg:col-span-2">
+        <div className="rounded-2xl border border-charcoal-200/60 bg-white p-5 lg:col-span-2">
           <div className="mb-4 flex items-center justify-between">
             <div>
-              <h2 className="heading-display price-text text-lg font-bold text-graphite-900">
+              <h2 className="heading-display price-text text-lg font-bold text-charcoal-900">
                 Savdo dinamikasi
               </h2>
-              <p className="text-xs text-graphite-500">
+              <p className="text-xs text-charcoal-500">
                 Oxirgi {range} kun
               </p>
             </div>
@@ -288,11 +288,11 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Status doirasi */}
-        <div className="rounded-2xl border border-graphite-200/60 bg-white p-5">
-          <h2 className="heading-display price-text text-lg font-bold text-graphite-900">
+        <div className="rounded-2xl border border-charcoal-200/60 bg-white p-5">
+          <h2 className="heading-display price-text text-lg font-bold text-charcoal-900">
             Buyurtma statuslari
           </h2>
-          <p className="text-xs text-graphite-500">Filtrlangan davr</p>
+          <p className="text-xs text-charcoal-500">Filtrlangan davr</p>
           <div className="mt-2 h-56">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -327,9 +327,9 @@ export default function AdminDashboardPage() {
                     className="h-2.5 w-2.5 rounded-full"
                     style={{ backgroundColor: s.color }}
                   />
-                  <span className="text-graphite-600">{s.name}</span>
+                  <span className="text-charcoal-600">{s.name}</span>
                 </div>
-                <span className="font-semibold text-graphite-800">{s.value}</span>
+                <span className="font-semibold text-charcoal-800">{s.value}</span>
               </div>
             ))}
           </div>
@@ -339,17 +339,17 @@ export default function AdminDashboardPage() {
       {/* Recent orders + top customers */}
       <div className="grid gap-4 lg:grid-cols-3">
         {/* Oxirgi buyurtmalar */}
-        <div className="rounded-2xl border border-graphite-200/60 bg-white lg:col-span-2">
-          <div className="flex items-center justify-between border-b border-graphite-100 px-5 py-4">
+        <div className="rounded-2xl border border-charcoal-200/60 bg-white lg:col-span-2">
+          <div className="flex items-center justify-between border-b border-charcoal-100 px-5 py-4">
             <div>
-              <h2 className="heading-display price-text text-lg font-bold text-graphite-900">
+              <h2 className="heading-display price-text text-lg font-bold text-charcoal-900">
                 Oxirgi buyurtmalar
               </h2>
-              <p className="text-xs text-graphite-500">Eng yangi 6 ta</p>
+              <p className="text-xs text-charcoal-500">Eng yangi 6 ta</p>
             </div>
             <Link
               href="/admin/buyurtmalar"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-petrol-600 hover:text-gold-500"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-forest-600 hover:text-gold-500"
             >
               Barchasi
               <ArrowRight className="h-3 w-3" />
@@ -358,7 +358,7 @@ export default function AdminDashboardPage() {
 
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-graphite-50/50 text-left text-[11px] uppercase tracking-wider text-graphite-500">
+              <thead className="bg-charcoal-50/50 text-left text-[11px] uppercase tracking-wider text-charcoal-500">
                 <tr>
                   <th className="px-5 py-3 font-semibold">Buyurtma</th>
                   <th className="px-5 py-3 font-semibold">Mijoz</th>
@@ -366,20 +366,20 @@ export default function AdminDashboardPage() {
                   <th className="px-5 py-3 font-semibold">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-graphite-100 text-sm">
+              <tbody className="divide-y divide-charcoal-100 text-sm">
                 {recentOrders.map((o) => {
                   const cfg = STATUS_CONFIG[o.status];
                   const Icon = cfg.icon;
                   return (
-                    <tr key={o.id} className="hover:bg-graphite-50/50">
-                      <td className="px-5 py-3 font-medium text-graphite-800">
+                    <tr key={o.id} className="hover:bg-charcoal-50/50">
+                      <td className="px-5 py-3 font-medium text-charcoal-800">
                         {o.number}
                       </td>
                       <td className="px-5 py-3">
-                        <p className="text-sm text-graphite-800">{o.customerName}</p>
-                        <p className="text-[11px] text-graphite-500">{o.customerPhone}</p>
+                        <p className="text-sm text-charcoal-800">{o.customerName}</p>
+                        <p className="text-[11px] text-charcoal-500">{o.customerPhone}</p>
                       </td>
-                      <td className="px-5 py-3 table-num font-semibold text-graphite-900">
+                      <td className="px-5 py-3 table-num font-semibold text-charcoal-900">
                         {formatUZS(o.total)}
                       </td>
                       <td className="px-5 py-3">
@@ -402,45 +402,45 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Eng yaxshi mijozlar */}
-        <div className="rounded-2xl border border-graphite-200/60 bg-white">
-          <div className="border-b border-graphite-100 px-5 py-4">
-            <h2 className="heading-display price-text text-lg font-bold text-graphite-900">
+        <div className="rounded-2xl border border-charcoal-200/60 bg-white">
+          <div className="border-b border-charcoal-100 px-5 py-4">
+            <h2 className="heading-display price-text text-lg font-bold text-charcoal-900">
               Eng yaxshi mijozlar
             </h2>
-            <p className="text-xs text-graphite-500">Umumiy xaridlar bo‘yicha</p>
+            <p className="text-xs text-charcoal-500">Umumiy xaridlar bo‘yicha</p>
           </div>
-          <ul className="divide-y divide-graphite-100">
+          <ul className="divide-y divide-charcoal-100">
             {topCustomers.map((c, idx) => (
               <li key={c.id} className="flex items-center gap-3 px-5 py-3">
                 <div
                   className={cn(
                     "grid h-10 w-10 shrink-0 place-items-center rounded-xl text-sm font-bold",
-                    idx === 0 && "bg-gold-400 text-graphite-900",
-                    idx === 1 && "bg-graphite-200 text-graphite-700",
+                    idx === 0 && "bg-gold-400 text-charcoal-900",
+                    idx === 1 && "bg-charcoal-200 text-charcoal-700",
                     idx === 2 && "bg-amber-600/20 text-amber-700",
-                    idx > 2 && "bg-graphite-100 text-graphite-500"
+                    idx > 2 && "bg-charcoal-100 text-charcoal-500"
                   )}
                 >
                   {c.name.charAt(0)}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="line-clamp-1 text-sm font-medium text-graphite-800">
+                  <p className="line-clamp-1 text-sm font-medium text-charcoal-800">
                     {c.name}
                   </p>
-                  <p className="text-[11px] text-graphite-500">
+                  <p className="text-[11px] text-charcoal-500">
                     {c.ordersCount} ta buyurtma
                   </p>
                 </div>
-                <span className="text-xs font-bold text-graphite-900">
+                <span className="text-xs font-bold text-charcoal-900">
                   {formatUZS(c.totalSpent)}
                 </span>
               </li>
             ))}
           </ul>
-          <div className="border-t border-graphite-100 px-5 py-3">
+          <div className="border-t border-charcoal-100 px-5 py-3">
             <Link
               href="/admin/mijozlar"
-              className="inline-flex items-center gap-1 text-xs font-semibold text-petrol-600 hover:text-gold-500"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-forest-600 hover:text-gold-500"
             >
               Barcha mijozlar
               <ArrowRight className="h-3 w-3" />
@@ -469,14 +469,14 @@ function KpiCard({
   color: "petrol" | "gold" | "emerald" | "red";
 }) {
   const colorMap = {
-    petrol: "bg-petrol-600/10 text-petrol-600",
+    petrol: "bg-forest-600/10 text-forest-600",
     gold: "bg-gold-400/15 text-gold-600",
     emerald: "bg-emerald-50 text-emerald-600",
     red: "bg-red-50 text-red-600",
   };
 
   return (
-    <div className="rounded-2xl border border-graphite-200/60 bg-white p-5">
+    <div className="rounded-2xl border border-charcoal-200/60 bg-white p-5">
       <div className="flex items-start justify-between">
         <div className={cn("grid h-11 w-11 place-items-center rounded-xl", colorMap[color])}>
           <Icon className="h-5 w-5" />
@@ -499,11 +499,11 @@ function KpiCard({
           </div>
         )}
       </div>
-      <p className="mt-4 text-xs font-medium text-graphite-500">{title}</p>
-      <p className="mt-1 price-display text-2xl text-graphite-900">
+      <p className="mt-4 text-xs font-medium text-charcoal-500">{title}</p>
+      <p className="mt-1 price-display text-2xl text-charcoal-900">
         {value}
       </p>
-      {sub && <p className="mt-1 text-[11px] text-graphite-500">{sub}</p>}
+      {sub && <p className="mt-1 text-[11px] text-charcoal-500">{sub}</p>}
     </div>
   );
 }

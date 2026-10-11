@@ -51,28 +51,28 @@ function StatusContent() {
   return (
     <div className="container-x py-12 md:py-16">
       <div className="mx-auto max-w-2xl">
-        <h1 className="price-display text-3xl text-graphite-900 md:text-4xl">
+        <h1 className="price-display text-3xl text-charcoal-900 md:text-4xl">
           Buyurtma holati
         </h1>
-        <p className="mt-2 text-sm text-graphite-500">
+        <p className="mt-2 text-sm text-charcoal-500">
           Buyurtma raqamini kiriting (masalan: LM-240101-1234)
         </p>
 
         <div className="mt-6 flex gap-2">
           <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-graphite-400" />
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-400" />
             <input
               type="text"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               placeholder="LM-YYYYMMDD-XXXX"
-              className="h-12 w-full rounded-xl border border-graphite-200 bg-white pl-11 pr-4 text-sm focus:border-petrol-600 focus:outline-none"
+              className="h-12 w-full rounded-xl border border-charcoal-200 bg-white pl-11 pr-4 text-sm focus:border-forest-600 focus:outline-none"
             />
           </div>
           <button
             onClick={handleSearch}
-            className="h-12 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+            className="h-12 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
           >
             Qidirish
           </button>
@@ -93,11 +93,11 @@ function StatusContent() {
         {order && status && (
           <div className="mt-8 space-y-6">
             {/* Status */}
-            <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
+            <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs text-graphite-500">Buyurtma raqami</p>
-                  <p className="price-display text-2xl text-graphite-900">
+                  <p className="text-xs text-charcoal-500">Buyurtma raqami</p>
+                  <p className="price-display text-2xl text-charcoal-900">
                     {order.number}
                   </p>
                 </div>
@@ -117,8 +117,8 @@ function StatusContent() {
             </div>
 
             {/* Timeline */}
-            <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-              <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-graphite-500">
+            <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-charcoal-500">
                 Buyurtma jarayoni
               </p>
               <ol className="space-y-4">
@@ -140,7 +140,7 @@ function StatusContent() {
                           "grid h-8 w-8 shrink-0 place-items-center rounded-full",
                           done
                             ? "bg-emerald-500 text-white"
-                            : "bg-graphite-100 text-graphite-400"
+                            : "bg-charcoal-100 text-charcoal-400"
                         )}
                       >
                         {done ? (
@@ -153,12 +153,12 @@ function StatusContent() {
                         <p
                           className={cn(
                             "text-sm font-medium",
-                            done ? "text-graphite-900" : "text-graphite-400"
+                            done ? "text-charcoal-900" : "text-charcoal-400"
                           )}
                         >
                           {step.label}
                           {current && (
-                            <span className="ml-2 rounded-full bg-petrol-600/10 px-2 py-0.5 text-[10px] font-semibold text-petrol-600">
+                            <span className="ml-2 rounded-full bg-forest-600/10 px-2 py-0.5 text-[10px] font-semibold text-forest-600">
                               Hozir
                             </span>
                           )}
@@ -171,34 +171,34 @@ function StatusContent() {
             </div>
 
             {/* Order details */}
-            <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-graphite-500">
+            <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-charcoal-500">
                 Buyurtma tarkibi
               </p>
               <ul className="space-y-3">
                 {order.items.map((i, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-graphite-100">
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-charcoal-100">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={i.image} alt={i.name} className="h-full w-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="line-clamp-1 text-sm font-medium text-graphite-800">
+                      <p className="line-clamp-1 text-sm font-medium text-charcoal-800">
                         {i.name}
                       </p>
-                      <p className="text-xs text-graphite-500">
+                      <p className="text-xs text-charcoal-500">
                         {i.quantity} x {formatUZS(i.price)}
                       </p>
                     </div>
-                    <span className="text-sm font-semibold text-graphite-800">
+                    <span className="text-sm font-semibold text-charcoal-800">
                       {formatUZS(i.price * i.quantity)}
                     </span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 flex items-center justify-between border-t border-graphite-100 pt-4">
-                <span className="font-semibold text-graphite-800">Jami</span>
-                <span className="price-display text-xl text-graphite-900">
+              <div className="mt-4 flex items-center justify-between border-t border-charcoal-100 pt-4">
+                <span className="font-semibold text-charcoal-800">Jami</span>
+                <span className="price-display text-xl text-charcoal-900">
                   {formatUZS(order.total)}
                 </span>
               </div>
@@ -206,7 +206,7 @@ function StatusContent() {
 
             <Link
               href="/"
-              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-graphite-200 px-6 text-sm font-medium text-graphite-700 hover:border-petrol-600"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-charcoal-200 px-6 text-sm font-medium text-charcoal-700 hover:border-forest-600"
             >
               <Home className="h-4 w-4" />
               Bosh sahifa
@@ -215,9 +215,9 @@ function StatusContent() {
         )}
 
         {!searched && (
-          <div className="mt-8 rounded-2xl border border-dashed border-graphite-200 bg-graphite-50 py-12 text-center">
-            <Package className="mx-auto h-10 w-10 text-graphite-300" />
-            <p className="mt-3 text-sm text-graphite-500">
+          <div className="mt-8 rounded-2xl border border-dashed border-charcoal-200 bg-charcoal-50 py-12 text-center">
+            <Package className="mx-auto h-10 w-10 text-charcoal-300" />
+            <p className="mt-3 text-sm text-charcoal-500">
               Buyurtma raqamingizni yuqoriga kiriting
             </p>
           </div>
@@ -232,7 +232,7 @@ export default function OrderStatusPage() {
     <Suspense
       fallback={
         <div className="container-x flex min-h-[60vh] items-center justify-center">
-          <div className="h-10 w-10 animate-spin rounded-full border-2 border-graphite-200 border-t-petrol-600" />
+          <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
         </div>
       }
     >

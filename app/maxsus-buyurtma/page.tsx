@@ -12,10 +12,10 @@ export default function CustomOrderPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">
           Maxsus buyurtma
         </p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-graphite-900 md:text-5xl">
+        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
           O‘zingizga xos mebel yasatmoqchimisiz?
         </h1>
-        <p className="mt-4 text-sm text-graphite-500">
+        <p className="mt-4 text-sm text-charcoal-500">
           O‘lchamlar, material va rangni o‘zingiz tanlang. Biz sizga individual taklif tayyorlaymiz.
         </p>
 
@@ -25,7 +25,7 @@ export default function CustomOrderPage() {
               e.preventDefault();
               setSent(true);
             }}
-            className="mt-10 space-y-5 rounded-3xl border border-graphite-200/60 bg-white p-6 md:p-8"
+            className="mt-10 space-y-5 rounded-3xl border border-charcoal-200/60 bg-white p-6 md:p-8"
           >
             <div className="grid gap-5 md:grid-cols-2">
               <Field label="Ism *" name="name" />
@@ -40,20 +40,20 @@ export default function CustomOrderPage() {
             <Field label="Material / Rang" name="material" placeholder="Eman, qora metall..." />
             <Field label="Budjet (taxminiy)" name="budget" />
             <div>
-              <label className="text-sm font-medium text-graphite-700">Izoh</label>
+              <label className="text-sm font-medium text-charcoal-700">Izoh</label>
               <textarea
                 rows={4}
-                className="mt-2 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+                className="mt-2 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
                 placeholder="Qo‘shimcha ma’lumot..."
               />
             </div>
-            <label className="flex items-start gap-3 text-xs text-graphite-500">
-              <input type="checkbox" required className="mt-0.5 accent-petrol-600" />
+            <label className="flex items-start gap-3 text-xs text-charcoal-500">
+              <input type="checkbox" required className="mt-0.5 accent-forest-600" />
               Shaxsiy ma’lumotlarim qayta ishlanishiga roziman
             </label>
             <button
               type="submit"
-              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-petrol-600 text-base font-semibold text-white hover:bg-petrol-700"
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-forest-600 text-base font-semibold text-white hover:bg-forest-700"
             >
               <Send className="h-5 w-5" />
               Ariza yuborish
@@ -64,10 +64,10 @@ export default function CustomOrderPage() {
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500 text-white">
               <Check className="h-8 w-8" />
             </div>
-            <h2 className="mt-5 price-display text-2xl text-graphite-900">
+            <h2 className="mt-5 price-display text-2xl text-charcoal-900">
               Arizangiz qabul qilindi!
             </h2>
-            <p className="mt-2 text-sm text-graphite-600">
+            <p className="mt-2 text-sm text-charcoal-600">
               Tez orada mutaxassisimiz siz bilan bog‘lanadi.
             </p>
           </div>
@@ -82,7 +82,7 @@ function Field({
 }: { label: string; name: string; type?: string; placeholder?: string }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm font-medium text-graphite-700">
+      <label htmlFor={name} className="text-sm font-medium text-charcoal-700">
         {label}
       </label>
       <input
@@ -90,7 +90,7 @@ function Field({
         name={name}
         type={type}
         placeholder={placeholder}
-        className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+        className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
       />
     </div>
   );

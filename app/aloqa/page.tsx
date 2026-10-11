@@ -16,10 +16,10 @@ export default function ContactPage() {
     <div className="container-x py-12">
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-500">Aloqa</p>
-        <h1 className="mt-3 font-display text-4xl font-bold text-graphite-900 md:text-5xl">
+        <h1 className="mt-3 font-display text-4xl font-bold text-charcoal-900 md:text-5xl">
           Biz bilan bog‘laning
         </h1>
-        <p className="mt-4 text-sm text-graphite-500">
+        <p className="mt-4 text-sm text-charcoal-500">
           Savollaringiz bormi? 24/7 aloqadamiz.
         </p>
       </div>
@@ -31,15 +31,15 @@ export default function ContactPage() {
             <Wrapper
               key={it.label}
               {...(it.href ? { href: it.href } : {})}
-              className="group rounded-2xl border border-graphite-200/60 bg-white p-5 transition-all hover:border-petrol-600/60 hover:shadow-soft"
+              className="group rounded-2xl border border-charcoal-200/60 bg-white p-5 transition-all hover:border-forest-600/60 hover:shadow-soft"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-petrol-600/5 text-petrol-600">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-forest-600/5 text-forest-600">
                 <it.icon className="h-5 w-5" />
               </div>
-              <p className="mt-4 text-xs uppercase tracking-wider text-graphite-500">
+              <p className="mt-4 text-xs uppercase tracking-wider text-charcoal-500">
                 {it.label}
               </p>
-              <p className="mt-1 text-sm font-semibold text-graphite-800 group-hover:text-petrol-600">
+              <p className="mt-1 text-sm font-semibold text-charcoal-800 group-hover:text-forest-600">
                 {it.value}
               </p>
             </Wrapper>

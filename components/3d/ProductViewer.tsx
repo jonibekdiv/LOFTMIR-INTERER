@@ -68,7 +68,7 @@ function FallbackViewer({ image, name }: { image?: string; name: string }) {
           {name.charAt(0)}
         </span>
       )}
-      <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-graphite-900/60 px-4 py-3 text-center text-xs text-white/80 backdrop-blur-md">
+      <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-charcoal-900/60 px-4 py-3 text-center text-xs text-white/80 backdrop-blur-md">
         3D model hozircha mavjud emas - foto korsatilmoqda
       </div>
     </div>
@@ -145,7 +145,7 @@ export function ProductViewer({
     <div
       ref={containerRef}
       className={cn(
-        "relative w-full overflow-hidden rounded-3xl bg-graphite-900",
+        "relative w-full overflow-hidden rounded-3xl bg-charcoal-900",
         isFullscreen ? "h-screen" : "aspect-square"
       )}
     >
@@ -202,7 +202,7 @@ export function ProductViewer({
           className={cn(
             "grid h-11 w-11 place-items-center rounded-full backdrop-blur-md transition-all",
             autoRotate
-              ? "bg-gold-400 text-graphite-900"
+              ? "bg-gold-400 text-charcoal-900"
               : "bg-white/10 text-white hover:bg-white/20"
           )}
         >

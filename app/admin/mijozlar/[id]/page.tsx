@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
@@ -46,7 +46,7 @@ export default function AdminCustomerDetailPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <div className="h-10 w-10 animate-spin rounded-full border-2 border-graphite-200 border-t-petrol-600" />
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-charcoal-200 border-t-forest-600" />
       </div>
     );
   }
@@ -59,7 +59,7 @@ export default function AdminCustomerDetailPage() {
         <p className="text-sm text-red-600">Mijoz topilmadi</p>
         <Link
           href="/admin/mijozlar"
-          className="mt-4 inline-block text-sm font-semibold text-petrol-600"
+          className="mt-4 inline-block text-sm font-semibold text-forest-600"
         >
           Ro‘yxatga qaytish
         </Link>
@@ -86,26 +86,26 @@ export default function AdminCustomerDetailPage() {
     <div className="mx-auto max-w-5xl">
       <Link
         href="/admin/mijozlar"
-        className="inline-flex items-center gap-2 text-xs font-medium text-graphite-500 hover:text-petrol-600"
+        className="inline-flex items-center gap-2 text-xs font-medium text-charcoal-500 hover:text-forest-600"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Mijozlarga qaytish
       </Link>
 
       {/* Header card */}
-      <div className="mt-6 overflow-hidden rounded-2xl border border-graphite-200/60 bg-white">
+      <div className="mt-6 overflow-hidden rounded-2xl border border-charcoal-200/60 bg-white">
         <div className="h-24 gradient-petrol" />
         <div className="px-6 pb-6">
           <div className="-mt-12 flex items-end justify-between gap-4">
             <div className="flex items-end gap-4">
-              <div className="grid h-24 w-24 place-items-center rounded-2xl border-4 border-white gradient-gold text-3xl font-bold text-graphite-900 shadow-soft">
+              <div className="grid h-24 w-24 place-items-center rounded-2xl border-4 border-white gradient-gold text-3xl font-bold text-charcoal-900 shadow-soft">
                 {customer.name.charAt(0)}
               </div>
               <div className="pb-2">
-                <h1 className="font-display text-2xl font-bold text-graphite-900">
+                <h1 className="font-display text-2xl font-bold text-charcoal-900">
                   {customer.name}
                 </h1>
-                <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-graphite-500">
+                <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-charcoal-500">
                   <span className="inline-flex items-center gap-1">
                     <Phone className="h-3 w-3" />
                     {customer.phone}
@@ -145,25 +145,25 @@ export default function AdminCustomerDetailPage() {
       </div>
 
       {/* Buyurtmalar tarixi */}
-      <div className="mt-6 rounded-2xl border border-graphite-200/60 bg-white">
-        <div className="border-b border-graphite-100 px-6 py-4">
-          <h2 className="font-display text-lg font-bold text-graphite-900">
+      <div className="mt-6 rounded-2xl border border-charcoal-200/60 bg-white">
+        <div className="border-b border-charcoal-100 px-6 py-4">
+          <h2 className="font-display text-lg font-bold text-charcoal-900">
             Buyurtmalar tarixi
           </h2>
-          <p className="text-xs text-graphite-500">
+          <p className="text-xs text-charcoal-500">
             {customerOrders.length} ta buyurtma
           </p>
         </div>
 
         {customerOrders.length === 0 ? (
           <div className="py-16 text-center">
-            <ShoppingBag className="mx-auto h-10 w-10 text-graphite-300" />
-            <p className="mt-3 text-sm text-graphite-500">
+            <ShoppingBag className="mx-auto h-10 w-10 text-charcoal-300" />
+            <p className="mt-3 text-sm text-charcoal-500">
               Buyurtmalar yo‘q
             </p>
           </div>
         ) : (
-          <ul className="divide-y divide-graphite-100">
+          <ul className="divide-y divide-charcoal-100">
             {customerOrders.map((o) => {
               const cfg = STATUS_CONFIG[o.status];
               const date = new Date(o.createdAt);
@@ -171,17 +171,17 @@ export default function AdminCustomerDetailPage() {
                 <li key={o.id}>
                   <Link
                     href={`/admin/buyurtmalar/${o.id}`}
-                    className="flex items-center justify-between gap-4 px-6 py-4 transition-colors hover:bg-graphite-50/50"
+                    className="flex items-center justify-between gap-4 px-6 py-4 transition-colors hover:bg-charcoal-50/50"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-petrol-600/10 text-petrol-600">
+                      <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-forest-600/10 text-forest-600">
                         <Package className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-mono text-sm font-semibold text-graphite-800">
+                        <p className="font-mono text-sm font-semibold text-charcoal-800">
                           {o.number}
                         </p>
-                        <p className="mt-0.5 text-[11px] text-graphite-500">
+                        <p className="mt-0.5 text-[11px] text-charcoal-500">
                           {date.toLocaleDateString("uz-UZ", {
                             day: "2-digit",
                             month: "long",
@@ -200,7 +200,7 @@ export default function AdminCustomerDetailPage() {
                       >
                         {cfg.label}
                       </span>
-                      <span className="font-semibold text-graphite-900">
+                      <span className="font-semibold text-charcoal-900">
                         {formatUZS(o.total)}
                       </span>
                     </div>
@@ -227,18 +227,18 @@ function StatCard({
   color: "petrol" | "gold" | "emerald";
 }) {
   const colorMap = {
-    petrol: "bg-petrol-600/10 text-petrol-600",
+    petrol: "bg-forest-600/10 text-forest-600",
     gold: "bg-gold-400/15 text-gold-600",
     emerald: "bg-emerald-50 text-emerald-600",
   };
 
   return (
-    <div className="rounded-2xl border border-graphite-200/60 bg-white p-5">
+    <div className="rounded-2xl border border-charcoal-200/60 bg-white p-5">
       <div className={cn("grid h-11 w-11 place-items-center rounded-xl", colorMap[color])}>
         <Icon className="h-5 w-5" />
       </div>
-      <p className="mt-4 text-xs font-medium text-graphite-500">{label}</p>
-      <p className="mt-1 font-display text-xl font-bold text-graphite-900">
+      <p className="mt-4 text-xs font-medium text-charcoal-500">{label}</p>
+      <p className="mt-1 font-display text-xl font-bold text-charcoal-900">
         {value}
       </p>
     </div>

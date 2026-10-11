@@ -79,10 +79,10 @@ export default function AdminCustomOrdersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="heading-display text-2xl text-graphite-900">
+        <h1 className="heading-display text-2xl text-charcoal-900">
           Maxsus buyurtmalar
         </h1>
-        <p className="mt-1 text-sm text-graphite-500">
+        <p className="mt-1 text-sm text-charcoal-500">
           {items.length} ta ariza
         </p>
       </div>
@@ -94,12 +94,12 @@ export default function AdminCustomOrdersPage() {
           className={cn(
             "inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-xs font-medium transition-all",
             statusFilter === "all"
-              ? "border-petrol-600 bg-petrol-600 text-white"
-              : "border-graphite-200 bg-white text-graphite-700 hover:border-petrol-600"
+              ? "border-forest-600 bg-forest-600 text-white"
+              : "border-charcoal-200 bg-white text-charcoal-700 hover:border-forest-600"
           )}
         >
           Barchasi
-          <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", statusFilter === "all" ? "bg-white/20" : "bg-graphite-100")}>
+          <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", statusFilter === "all" ? "bg-white/20" : "bg-charcoal-100")}>
             {counts.all}
           </span>
         </button>
@@ -110,12 +110,12 @@ export default function AdminCustomOrdersPage() {
             className={cn(
               "inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-xs font-medium transition-all",
               statusFilter === s
-                ? "border-petrol-600 bg-petrol-600 text-white"
-                : "border-graphite-200 bg-white text-graphite-700 hover:border-petrol-600"
+                ? "border-forest-600 bg-forest-600 text-white"
+                : "border-charcoal-200 bg-white text-charcoal-700 hover:border-forest-600"
             )}
           >
             {STATUS_CONFIG[s].label}
-            <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", statusFilter === s ? "bg-white/20" : "bg-graphite-100")}>
+            <span className={cn("rounded-full px-1.5 py-0.5 text-[10px] font-bold", statusFilter === s ? "bg-white/20" : "bg-charcoal-100")}>
               {counts[s]}
             </span>
           </button>
@@ -124,21 +124,21 @@ export default function AdminCustomOrdersPage() {
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-graphite-400" />
+        <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-charcoal-400" />
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Ism yoki telefon..."
-          className="h-11 w-full rounded-xl border border-graphite-200 bg-white pl-11 pr-4 text-sm focus:border-petrol-600 focus:outline-none"
+          className="h-11 w-full rounded-xl border border-charcoal-200 bg-white pl-11 pr-4 text-sm focus:border-forest-600 focus:outline-none"
         />
       </div>
 
       {/* Grid */}
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-graphite-200 bg-white py-20 text-center">
-          <MessageSquare className="mx-auto h-10 w-10 text-graphite-300" />
-          <p className="mt-3 text-sm font-semibold text-graphite-700">
+        <div className="rounded-2xl border border-dashed border-charcoal-200 bg-white py-20 text-center">
+          <MessageSquare className="mx-auto h-10 w-10 text-charcoal-300" />
+          <p className="mt-3 text-sm font-semibold text-charcoal-700">
             Ariza topilmadi
           </p>
         </div>
@@ -150,14 +150,14 @@ export default function AdminCustomOrdersPage() {
             return (
               <div
                 key={c.id}
-                className="rounded-2xl border border-graphite-200/60 bg-white p-5 transition-all hover:border-petrol-600/40 hover:shadow-soft"
+                className="rounded-2xl border border-charcoal-200/60 bg-white p-5 transition-all hover:border-forest-600/40 hover:shadow-soft"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-base font-semibold text-graphite-900">
+                    <p className="text-base font-semibold text-charcoal-900">
                       {c.name}
                     </p>
-                    <p className="mt-0.5 font-mono text-xs text-graphite-500">
+                    <p className="mt-0.5 font-mono text-xs text-charcoal-500">
                       {c.phone}
                     </p>
                   </div>
@@ -167,27 +167,27 @@ export default function AdminCustomOrdersPage() {
                 </div>
 
                 <div className="mt-4 space-y-1.5 text-xs">
-                  <p className="text-graphite-600">
-                    <strong className="text-graphite-800">Tur:</strong> {c.type}
+                  <p className="text-charcoal-600">
+                    <strong className="text-charcoal-800">Tur:</strong> {c.type}
                   </p>
-                  <p className="text-graphite-600">
-                    <strong className="text-graphite-800">O‘lcham:</strong> {c.dimensions}
+                  <p className="text-charcoal-600">
+                    <strong className="text-charcoal-800">O‘lcham:</strong> {c.dimensions}
                   </p>
-                  <p className="text-graphite-600">
-                    <strong className="text-graphite-800">Material:</strong> {c.material}
+                  <p className="text-charcoal-600">
+                    <strong className="text-charcoal-800">Material:</strong> {c.material}
                   </p>
-                  <p className="text-graphite-600">
-                    <strong className="text-graphite-800">Budjet:</strong> {c.budget}
+                  <p className="text-charcoal-600">
+                    <strong className="text-charcoal-800">Budjet:</strong> {c.budget}
                   </p>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between border-t border-graphite-100 pt-3">
-                  <span className="label-mono text-[11px] text-graphite-500">
+                <div className="mt-4 flex items-center justify-between border-t border-charcoal-100 pt-3">
+                  <span className="label-mono text-[11px] text-charcoal-500">
                     {date.toLocaleDateString("uz-UZ", { day: "2-digit", month: "short", year: "numeric" })}
                   </span>
                   <button
                     onClick={() => setSelected(c)}
-                    className="inline-flex h-8 items-center gap-1 rounded-lg bg-petrol-600/10 px-3 text-xs font-semibold text-petrol-600 hover:bg-petrol-600 hover:text-white"
+                    className="inline-flex h-8 items-center gap-1 rounded-lg bg-forest-600/10 px-3 text-xs font-semibold text-forest-600 hover:bg-forest-600 hover:text-white"
                   >
                     <Eye className="h-3 w-3" />
                     Batafsil
@@ -202,14 +202,14 @@ export default function AdminCustomOrdersPage() {
       {/* Detail modal */}
       {selected && (
         <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4">
-          <div className="fixed inset-0 bg-graphite-900/50 backdrop-blur-sm" onClick={() => setSelected(null)} />
+          <div className="fixed inset-0 bg-charcoal-900/50 backdrop-blur-sm" onClick={() => setSelected(null)} />
           <div className="relative mt-8 w-full max-w-2xl rounded-2xl bg-white p-6">
             <div className="flex items-start justify-between">
               <div>
-                <h2 className="heading-display text-xl text-graphite-900">
+                <h2 className="heading-display text-xl text-charcoal-900">
                   {selected.name}
                 </h2>
-                <p className="mt-1 text-xs text-graphite-500">
+                <p className="mt-1 text-xs text-charcoal-500">
                   Ariza #{selected.id.toUpperCase()}
                 </p>
               </div>
@@ -228,17 +228,17 @@ export default function AdminCustomOrdersPage() {
             </div>
 
             {selected.comment && (
-              <div className="mt-6 rounded-xl bg-graphite-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-graphite-500">
+              <div className="mt-6 rounded-xl bg-charcoal-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-charcoal-500">
                   Izoh
                 </p>
-                <p className="mt-2 text-sm text-graphite-700">{selected.comment}</p>
+                <p className="mt-2 text-sm text-charcoal-700">{selected.comment}</p>
               </div>
             )}
 
             {/* Status o'zgartirish */}
             <div className="mt-6">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-graphite-500">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-charcoal-500">
                 Statusni o‘zgartirish
               </p>
               <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
@@ -249,8 +249,8 @@ export default function AdminCustomOrdersPage() {
                     className={cn(
                       "rounded-xl border px-4 py-2.5 text-xs font-semibold transition-all",
                       selected.status === s
-                        ? "border-petrol-600 bg-petrol-600 text-white"
-                        : "border-graphite-200 hover:border-petrol-600"
+                        ? "border-forest-600 bg-forest-600 text-white"
+                        : "border-charcoal-200 hover:border-forest-600"
                     )}
                   >
                     {STATUS_CONFIG[s].label}
@@ -262,7 +262,7 @@ export default function AdminCustomOrdersPage() {
             <div className="mt-6 flex justify-end">
               <button
                 onClick={() => setSelected(null)}
-                className="h-11 rounded-xl border border-graphite-200 px-5 text-sm font-medium hover:bg-graphite-50"
+                className="h-11 rounded-xl border border-charcoal-200 px-5 text-sm font-medium hover:bg-charcoal-50"
               >
                 Yopish
               </button>
@@ -284,15 +284,15 @@ function InfoBlock({
   value: string;
 }) {
   return (
-    <div className="flex items-start gap-3 rounded-xl border border-graphite-100 bg-graphite-50/50 p-4">
-      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-petrol-600">
+    <div className="flex items-start gap-3 rounded-xl border border-charcoal-100 bg-charcoal-50/50 p-4">
+      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-forest-600">
         <Icon className="h-4 w-4" />
       </div>
       <div className="min-w-0 flex-1">
-        <p className="label-mono text-[10px] uppercase tracking-wider text-graphite-500">
+        <p className="label-mono text-[10px] uppercase tracking-wider text-charcoal-500">
           {label}
         </p>
-        <p className="mt-0.5 text-sm font-medium text-graphite-800 break-words">
+        <p className="mt-0.5 text-sm font-medium text-charcoal-800 break-words">
           {value}
         </p>
       </div>

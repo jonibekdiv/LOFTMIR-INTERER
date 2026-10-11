@@ -118,10 +118,10 @@ export default function NewProductPage() {
           <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-emerald-500 text-white">
             <Check className="h-8 w-8" />
           </div>
-          <h2 className="mt-5 price-display text-2xl text-graphite-900">
+          <h2 className="mt-5 price-display text-2xl text-charcoal-900">
             Mahsulot qo‘shildi!
           </h2>
-          <p className="mt-2 text-sm text-graphite-500">
+          <p className="mt-2 text-sm text-charcoal-500">
             Ro‘yxatga qaytmoqda...
           </p>
         </div>
@@ -133,13 +133,13 @@ export default function NewProductPage() {
     <div className="mx-auto max-w-4xl">
       <Link
         href="/admin/mahsulotlar"
-        className="inline-flex items-center gap-2 text-xs font-medium text-graphite-500 hover:text-petrol-600"
+        className="inline-flex items-center gap-2 text-xs font-medium text-charcoal-500 hover:text-forest-600"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Mahsulotlarga qaytish
       </Link>
 
-      <h1 className="mt-4 price-display text-2xl text-graphite-900">
+      <h1 className="mt-4 price-display text-2xl text-charcoal-900">
         Yangi mahsulot
       </h1>
 
@@ -172,7 +172,7 @@ export default function NewProductPage() {
             />
           </div>
           <div className="mt-5">
-            <label className="text-sm font-medium text-graphite-700">
+            <label className="text-sm font-medium text-charcoal-700">
               Tavsif
             </label>
             <textarea
@@ -180,7 +180,7 @@ export default function NewProductPage() {
               onChange={(e) => setForm({ ...form, descriptionUz: e.target.value })}
               rows={4}
               placeholder="Mahsulot haqida batafsil ma’lumot..."
-              className="mt-2 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+              className="mt-2 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
             />
           </div>
         </Card>
@@ -233,13 +233,13 @@ export default function NewProductPage() {
         <Card title="Kategoriya va material">
           <div className="grid gap-5 md:grid-cols-2">
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Kategoriya *
               </label>
               <select
                 value={form.category}
                 onChange={(e) => setForm({ ...form, category: e.target.value })}
-                className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+                className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
               >
                 {categories.map((c) => (
                   <option key={c.slug} value={c.slug}>
@@ -291,14 +291,14 @@ export default function NewProductPage() {
         <Card title="Rasm">
           <div className="grid gap-5 md:grid-cols-2">
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Rasm URL yoki tanlang
               </label>
               <input
                 type="text"
                 value={form.imageUrl}
                 onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
-                className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+                className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
               />
               <div className="mt-3 grid grid-cols-3 gap-2">
                 {PLACEHOLDER_IMAGES.map((url, i) => (
@@ -309,14 +309,14 @@ export default function NewProductPage() {
                     className={cn(
                       "relative aspect-square overflow-hidden rounded-lg border-2 transition-all",
                       form.imageUrl === url
-                        ? "border-petrol-600"
-                        : "border-graphite-200 hover:border-graphite-300"
+                        ? "border-forest-600"
+                        : "border-charcoal-200 hover:border-charcoal-300"
                     )}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={url} alt="" className="h-full w-full object-cover" />
                     {form.imageUrl === url && (
-                      <div className="absolute inset-0 grid place-items-center bg-petrol-600/20">
+                      <div className="absolute inset-0 grid place-items-center bg-forest-600/20">
                         <Check className="h-5 w-5 text-white" />
                       </div>
                     )}
@@ -325,10 +325,10 @@ export default function NewProductPage() {
               </div>
             </div>
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Ko‘rinishi
               </label>
-              <div className="mt-2 flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border border-graphite-200 bg-graphite-50">
+              <div className="mt-2 flex aspect-[4/5] items-center justify-center overflow-hidden rounded-xl border border-charcoal-200 bg-charcoal-50">
                 {form.imageUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -337,7 +337,7 @@ export default function NewProductPage() {
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <ImageIcon className="h-10 w-10 text-graphite-300" />
+                  <ImageIcon className="h-10 w-10 text-charcoal-300" />
                 )}
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function NewProductPage() {
         <Card title="Sozlamalar">
           <div className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-graphite-700">
+              <label className="text-sm font-medium text-charcoal-700">
                 Status
               </label>
               <div className="mt-2 flex gap-2">
@@ -360,8 +360,8 @@ export default function NewProductPage() {
                     className={cn(
                       "rounded-xl border px-4 py-2 text-sm font-medium transition-all",
                       form.status === s
-                        ? "border-petrol-600 bg-petrol-600 text-white"
-                        : "border-graphite-200 text-graphite-700 hover:border-graphite-300"
+                        ? "border-forest-600 bg-forest-600 text-white"
+                        : "border-charcoal-200 text-charcoal-700 hover:border-charcoal-300"
                     )}
                   >
                     {s === "draft" && "Qoralama"}
@@ -377,9 +377,9 @@ export default function NewProductPage() {
                 type="checkbox"
                 checked={form.isFeatured}
                 onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
-                className="h-5 w-5 accent-petrol-600"
+                className="h-5 w-5 accent-forest-600"
               />
-              <span className="text-sm font-medium text-graphite-700">
+              <span className="text-sm font-medium text-charcoal-700">
                 Bosh sahifada ko‘rsatish (Featured)
               </span>
             </label>
@@ -390,13 +390,13 @@ export default function NewProductPage() {
         <div className="flex justify-end gap-3">
           <Link
             href="/admin/mahsulotlar"
-            className="inline-flex h-12 items-center justify-center rounded-xl border border-graphite-200 px-6 text-sm font-medium hover:bg-graphite-50"
+            className="inline-flex h-12 items-center justify-center rounded-xl border border-charcoal-200 px-6 text-sm font-medium hover:bg-charcoal-50"
           >
             Bekor qilish
           </Link>
           <button
             type="submit"
-            className="inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+            className="inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
           >
             <Save className="h-4 w-4" />
             Saqlash
@@ -415,8 +415,8 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl border border-graphite-200/60 bg-white p-6">
-      <h2 className="mb-5 heading-display price-text text-lg font-bold text-graphite-900">
+    <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6">
+      <h2 className="mb-5 heading-display price-text text-lg font-bold text-charcoal-900">
         {title}
       </h2>
       {children}
@@ -441,14 +441,14 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-sm font-medium text-graphite-700">{label}</label>
+      <label className="text-sm font-medium text-charcoal-700">{label}</label>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="mt-2 h-12 w-full rounded-xl border border-graphite-200 bg-white px-4 text-sm focus:border-petrol-600 focus:outline-none"
+        className="mt-2 h-12 w-full rounded-xl border border-charcoal-200 bg-white px-4 text-sm focus:border-forest-600 focus:outline-none"
       />
     </div>
   );

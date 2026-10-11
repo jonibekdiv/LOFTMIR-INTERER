@@ -55,19 +55,19 @@ export default function CheckoutPage() {
   if (items.length === 0) {
     return (
       <div className="container-x py-12">
-        <div className="mx-auto max-w-lg rounded-3xl border border-dashed border-graphite-200 bg-graphite-50 py-20 text-center">
+        <div className="mx-auto max-w-lg rounded-3xl border border-dashed border-charcoal-200 bg-charcoal-50 py-20 text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-soft">
-            <ShoppingBag className="h-7 w-7 text-graphite-400" />
+            <ShoppingBag className="h-7 w-7 text-charcoal-400" />
           </div>
-          <h1 className="mt-5 price-display text-2xl text-graphite-800">
+          <h1 className="mt-5 price-display text-2xl text-charcoal-800">
             Savat bosh
           </h1>
-          <p className="mt-2 text-sm text-graphite-500">
+          <p className="mt-2 text-sm text-charcoal-500">
             Buyurtma berish uchun avval mahsulot qo‘shing
           </p>
           <Link
             href="/mahsulotlar"
-            className="mt-6 inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+            className="mt-6 inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
           >
             Mahsulotlarni ko‘rish
             <ArrowRight className="h-4 w-4" />
@@ -141,13 +141,13 @@ export default function CheckoutPage() {
     <div className="container-x py-10 md:py-14">
       <Link
         href="/savat"
-        className="inline-flex items-center gap-2 text-xs font-medium text-graphite-500 hover:text-petrol-600"
+        className="inline-flex items-center gap-2 text-xs font-medium text-charcoal-500 hover:text-forest-600"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
         Savatga qaytish
       </Link>
 
-      <h1 className="mt-4 price-display text-3xl text-graphite-900 md:text-4xl">
+      <h1 className="mt-4 price-display text-3xl text-charcoal-900 md:text-4xl">
         Buyurtmani rasmiylashtirish
       </h1>
 
@@ -163,9 +163,9 @@ export default function CheckoutPage() {
                 <div
                   className={cn(
                     "grid h-10 w-10 place-items-center rounded-full transition-all",
-                    isActive && "bg-petrol-600 text-white ring-4 ring-petrol-600/20",
+                    isActive && "bg-forest-600 text-white ring-4 ring-forest-600/20",
                     isDone && "bg-emerald-500 text-white",
-                    !isActive && !isDone && "bg-graphite-100 text-graphite-400"
+                    !isActive && !isDone && "bg-charcoal-100 text-charcoal-400"
                   )}
                 >
                   {isDone ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
@@ -173,9 +173,9 @@ export default function CheckoutPage() {
                 <span
                   className={cn(
                     "hidden text-sm font-medium md:inline",
-                    isActive && "text-graphite-900",
+                    isActive && "text-charcoal-900",
                     isDone && "text-emerald-600",
-                    !isActive && !isDone && "text-graphite-400"
+                    !isActive && !isDone && "text-charcoal-400"
                   )}
                 >
                   {s.title}
@@ -185,7 +185,7 @@ export default function CheckoutPage() {
                 <div
                   className={cn(
                     "h-0.5 w-8 rounded-full md:w-16",
-                    step > s.id ? "bg-emerald-500" : "bg-graphite-200"
+                    step > s.id ? "bg-emerald-500" : "bg-charcoal-200"
                   )}
                 />
               )}
@@ -197,11 +197,11 @@ export default function CheckoutPage() {
       <div className="mt-10 grid gap-8 lg:grid-cols-3">
         {/* Form */}
         <div className="lg:col-span-2">
-          <div className="rounded-2xl border border-graphite-200/60 bg-white p-6 md:p-8">
+          <div className="rounded-2xl border border-charcoal-200/60 bg-white p-6 md:p-8">
             {/* STEP 1 */}
             {step === 1 && (
               <div className="space-y-5">
-                <h2 className="price-display text-xl text-graphite-900">
+                <h2 className="price-display text-xl text-charcoal-900">
                   Aloqa ma’lumotlari
                 </h2>
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -241,7 +241,7 @@ export default function CheckoutPage() {
             {/* STEP 2 */}
             {step === 2 && (
               <div className="space-y-5">
-                <h2 className="price-display text-xl text-graphite-900">
+                <h2 className="price-display text-xl text-charcoal-900">
                   Yetkazish manzili
                 </h2>
                 <Field
@@ -280,7 +280,7 @@ export default function CheckoutPage() {
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-graphite-700">
+                  <label className="text-sm font-medium text-charcoal-700">
                     Izoh (ixtiyoriy)
                   </label>
                   <textarea
@@ -288,7 +288,7 @@ export default function CheckoutPage() {
                     onChange={(e) => setAddress({ comment: e.target.value })}
                     rows={3}
                     placeholder="Kuryerga qo‘shimcha ma’lumot..."
-                    className="mt-2 w-full rounded-xl border border-graphite-200 bg-white px-4 py-3 text-sm focus:border-petrol-600 focus:outline-none"
+                    className="mt-2 w-full rounded-xl border border-charcoal-200 bg-white px-4 py-3 text-sm focus:border-forest-600 focus:outline-none"
                   />
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function CheckoutPage() {
             {/* STEP 3 */}
             {step === 3 && (
               <div className="space-y-5">
-                <h2 className="price-display text-xl text-graphite-900">
+                <h2 className="price-display text-xl text-charcoal-900">
                   To‘lov usuli
                 </h2>
                 <div className="grid gap-3">
@@ -317,14 +317,14 @@ export default function CheckoutPage() {
                     title="Karta orqali"
                     desc="Kuryerga karta orqali to‘lov"
                   />
-                  <div className="rounded-xl border border-dashed border-graphite-200 bg-graphite-50 p-4 text-xs text-graphite-500">
+                  <div className="rounded-xl border border-dashed border-charcoal-200 bg-charcoal-50 p-4 text-xs text-charcoal-500">
                     💡 Online to‘lov (Payme, Click) tez orada qo‘shiladi.
                   </div>
                 </div>
 
                 {/* Tasdiq */}
-                <div className="mt-6 rounded-2xl border border-graphite-200/60 bg-graphite-50 p-5">
-                  <h3 className="mb-3 text-sm font-semibold text-graphite-800">
+                <div className="mt-6 rounded-2xl border border-charcoal-200/60 bg-charcoal-50 p-5">
+                  <h3 className="mb-3 text-sm font-semibold text-charcoal-800">
                     Buyurtma tafsilotlari
                   </h3>
                   <dl className="space-y-2 text-sm">
@@ -338,22 +338,22 @@ export default function CheckoutPage() {
                   </dl>
                 </div>
 
-                <label className="flex items-start gap-3 text-xs text-graphite-600">
-                  <input type="checkbox" required className="mt-0.5 accent-petrol-600" defaultChecked />
+                <label className="flex items-start gap-3 text-xs text-charcoal-600">
+                  <input type="checkbox" required className="mt-0.5 accent-forest-600" defaultChecked />
                   <span>
-                    Men <Link href="/maxfiylik" className="font-medium text-petrol-600 underline">maxfiylik siyosati</Link> va <Link href="/foydalanish" className="font-medium text-petrol-600 underline">foydalanish shartlari</Link>ga roziman
+                    Men <Link href="/maxfiylik" className="font-medium text-forest-600 underline">maxfiylik siyosati</Link> va <Link href="/foydalanish" className="font-medium text-forest-600 underline">foydalanish shartlari</Link>ga roziman
                   </span>
                 </label>
               </div>
             )}
 
             {/* Buttons */}
-            <div className="mt-8 flex items-center justify-between gap-3 border-t border-graphite-100 pt-6">
+            <div className="mt-8 flex items-center justify-between gap-3 border-t border-charcoal-100 pt-6">
               {step > 1 ? (
                 <button
                   onClick={prev}
                   disabled={submitting}
-                  className="inline-flex h-12 items-center gap-2 rounded-xl border border-graphite-200 px-5 text-sm font-medium text-graphite-700 hover:border-petrol-600 disabled:opacity-50"
+                  className="inline-flex h-12 items-center gap-2 rounded-xl border border-charcoal-200 px-5 text-sm font-medium text-charcoal-700 hover:border-forest-600 disabled:opacity-50"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Orqaga
@@ -365,7 +365,7 @@ export default function CheckoutPage() {
               {step < 3 ? (
                 <button
                   onClick={next}
-                  className="inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700"
+                  className="inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700"
                 >
                   Keyingi
                   <ArrowRight className="h-4 w-4" />
@@ -374,7 +374,7 @@ export default function CheckoutPage() {
                 <button
                   onClick={submitOrder}
                   disabled={submitting}
-                  className="inline-flex h-12 items-center gap-2 rounded-xl bg-petrol-600 px-6 text-sm font-semibold text-white hover:bg-petrol-700 disabled:opacity-50"
+                  className="inline-flex h-12 items-center gap-2 rounded-xl bg-forest-600 px-6 text-sm font-semibold text-white hover:bg-forest-700 disabled:opacity-50"
                 >
                   {submitting ? (
                     <>
@@ -395,8 +395,8 @@ export default function CheckoutPage() {
 
         {/* Summary */}
         <div className="lg:col-span-1">
-          <div className="sticky top-24 rounded-2xl border border-graphite-200/60 bg-white p-6">
-            <h2 className="font-display price-text text-lg font-bold text-graphite-900">
+          <div className="sticky top-24 rounded-2xl border border-charcoal-200/60 bg-white p-6">
+            <h2 className="font-display price-text text-lg font-bold text-charcoal-900">
               Buyurtma
             </h2>
             <ul className="mt-4 max-h-64 space-y-3 overflow-y-auto pr-1">
@@ -405,36 +405,36 @@ export default function CheckoutPage() {
                   key={`${i.productId}-${idx}`}
                   className="flex items-center gap-3"
                 >
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-graphite-100">
+                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-charcoal-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={i.image} alt={i.name} className="h-full w-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="line-clamp-1 text-xs font-medium text-graphite-800">
+                    <p className="line-clamp-1 text-xs font-medium text-charcoal-800">
                       {i.name}
                     </p>
-                    <p className="text-[11px] text-graphite-500">
+                    <p className="text-[11px] text-charcoal-500">
                       {i.quantity} x {formatUZS(i.price)}
                     </p>
                   </div>
-                  <span className="text-xs font-semibold text-graphite-800">
+                  <span className="text-xs font-semibold text-charcoal-800">
                     {formatUZS(i.price * i.quantity)}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="mt-4 space-y-2 border-t border-graphite-100 pt-4 text-sm">
+            <div className="mt-4 space-y-2 border-t border-charcoal-100 pt-4 text-sm">
               <div className="flex justify-between">
-                <span className="text-graphite-500">Mahsulotlar</span>
+                <span className="text-charcoal-500">Mahsulotlar</span>
                 <span className="font-medium">{formatUZS(total)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-graphite-500">Yetkazish</span>
+                <span className="text-charcoal-500">Yetkazish</span>
                 <span className="font-medium text-emerald-600">Bepul</span>
               </div>
-              <div className="flex justify-between border-t border-graphite-100 pt-2">
+              <div className="flex justify-between border-t border-charcoal-100 pt-2">
                 <span className="font-semibold">Jami</span>
-                <span className="price-display text-xl text-graphite-900">
+                <span className="price-display text-xl text-charcoal-900">
                   {formatUZS(total + shipping)}
                 </span>
               </div>
@@ -463,7 +463,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-sm font-medium text-graphite-700">{label}</label>
+      <label className="text-sm font-medium text-charcoal-700">{label}</label>
       <input
         type={type}
         value={value}
@@ -473,7 +473,7 @@ function Field({
           "mt-2 h-12 w-full rounded-xl border bg-white px-4 text-sm focus:outline-none",
           error
             ? "border-red-300 focus:border-red-500"
-            : "border-graphite-200 focus:border-petrol-600"
+            : "border-charcoal-200 focus:border-forest-600"
         )}
       />
       {error && <p className="mt-1 text-xs text-red-500">{error}</p>}
@@ -504,26 +504,26 @@ function PaymentOption({
       className={cn(
         "flex items-center gap-4 rounded-xl border-2 p-4 text-left transition-all",
         active
-          ? "border-petrol-600 bg-petrol-600/5"
-          : "border-graphite-200 hover:border-graphite-300"
+          ? "border-forest-600 bg-forest-600/5"
+          : "border-charcoal-200 hover:border-charcoal-300"
       )}
     >
       <div
         className={cn(
           "grid h-11 w-11 place-items-center rounded-xl",
-          active ? "bg-petrol-600 text-white" : "bg-graphite-100 text-graphite-500"
+          active ? "bg-forest-600 text-white" : "bg-charcoal-100 text-charcoal-500"
         )}
       >
         <Icon className="h-5 w-5" />
       </div>
       <div className="flex-1">
-        <p className="text-sm font-semibold text-graphite-900">{title}</p>
-        <p className="text-xs text-graphite-500">{desc}</p>
+        <p className="text-sm font-semibold text-charcoal-900">{title}</p>
+        <p className="text-xs text-charcoal-500">{desc}</p>
       </div>
       <div
         className={cn(
           "grid h-5 w-5 place-items-center rounded-full border-2",
-          active ? "border-petrol-600 bg-petrol-600" : "border-graphite-300"
+          active ? "border-forest-600 bg-forest-600" : "border-charcoal-300"
         )}
       >
         {active && <div className="h-2 w-2 rounded-full bg-white" />}
@@ -535,8 +535,8 @@ function PaymentOption({
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-start justify-between gap-3">
-      <dt className="text-graphite-500">{label}</dt>
-      <dd className="text-right font-medium text-graphite-800">{value}</dd>
+      <dt className="text-charcoal-500">{label}</dt>
+      <dd className="text-right font-medium text-charcoal-800">{value}</dd>
     </div>
   );
 }
